@@ -17,6 +17,8 @@
 		E435C05A2C3FBCD100F1D05B /* ViewModelSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435C0592C3FBCD100F1D05B /* ViewModelSample.swift */; };
 		E435C05C2C3FBCDA00F1D05B /* ViewSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435C05B2C3FBCDA00F1D05B /* ViewSample.swift */; };
 		E435C05E2C3FBCE100F1D05B /* ServiceSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435C05D2C3FBCE100F1D05B /* ServiceSample.swift */; };
+		E435C0612C3FC76A00F1D05B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435C0602C3FC76A00F1D05B /* Location.swift */; };
+		E435C0642C3FC7E900F1D05B /* Recommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435C0632C3FC7E900F1D05B /* Recommendation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		E435C0592C3FBCD100F1D05B /* ViewModelSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelSample.swift; sourceTree = "<group>"; };
 		E435C05B2C3FBCDA00F1D05B /* ViewSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSample.swift; sourceTree = "<group>"; };
 		E435C05D2C3FBCE100F1D05B /* ServiceSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSample.swift; sourceTree = "<group>"; };
+		E435C0602C3FC76A00F1D05B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		E435C0632C3FC7E900F1D05B /* Recommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 		E435C03F2C3FBAEC00F1D05B /* NC3 */ = {
 			isa = PBXGroup;
 			children = (
+				E435C0622C3FC7E100F1D05B /* Data */,
+				E435C05F2C3FC76000F1D05B /* Models */,
 				E435C0552C3FBC8400F1D05B /* ViewModels */,
 				E435C0542C3FBC7700F1D05B /* Screens */,
 				E435C0512C3FBC6300F1D05B /* Services */,
@@ -115,6 +121,22 @@
 				E435C0592C3FBCD100F1D05B /* ViewModelSample.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E435C05F2C3FC76000F1D05B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E435C0602C3FC76A00F1D05B /* Location.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E435C0622C3FC7E100F1D05B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E435C0632C3FC7E900F1D05B /* Recommendation.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,9 +213,11 @@
 				E435C05E2C3FBCE100F1D05B /* ServiceSample.swift in Sources */,
 				E435C0582C3FBCA000F1D05B /* DetailScreenView.swift in Sources */,
 				E435C0452C3FBAEC00F1D05B /* Item.swift in Sources */,
+				E435C0612C3FC76A00F1D05B /* Location.swift in Sources */,
 				E435C0412C3FBAEC00F1D05B /* NC3App.swift in Sources */,
 				E435C05A2C3FBCD100F1D05B /* ViewModelSample.swift in Sources */,
 				E435C0532C3FBC7100F1D05B /* HomeScreenView.swift in Sources */,
+				E435C0642C3FC7E900F1D05B /* Recommendation.swift in Sources */,
 				E435C05C2C3FBCDA00F1D05B /* ViewSample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
