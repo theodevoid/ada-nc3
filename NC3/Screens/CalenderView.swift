@@ -9,39 +9,47 @@ import SwiftUI
 
 struct CalenderView: View {
     
-    @State private var date = Date()
-    
-    var dateClosedRange: ClosedRange<Date> {
-        let min = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
-        let max = Calendar.current.date(byAdding: .day, value: 1, to: Date())!
-        return min...max
-    }
+    @State private var selectedDate: String = ""
+    @State private var selectedDay: String = ""
+
+    @ObservedObject var calendarViewModel = CalendarViewModel()
 
     var body: some View {
         VStack {
-            DatePicker(
-                    "Start Date",
-                    selection: $date,
-                    in: dateClosedRange,
-                    displayedComponents: [.date]
-                )
-            .datePickerStyle(.graphical)
             
-            ScrollView(.horizontal){
+            ScrollView(.horizontal, showsIndicators: false){
                 HStack(spacing: 20){
-                    CalendarPicker()
-                    CalendarPicker()
-                    CalendarPicker()
-                    CalendarPicker()
-                    CalendarPicker()
-                    CalendarPicker()
-                    CalendarPicker()
-                    CalendarPicker()
-                    CalendarPicker()
-                    CalendarPicker()
+                    ForEach(calendarViewModel.nextSevenDays) { customDate in
+                                    CalendarPicker(customDate: customDate, selectedDate: $selectedDate, selectedDay: $selectedDay)
+                        .onTapGesture {
+                            selectedDate = customDate.date
+                            selectedDay = customDate.day
+                        }
+                    }
                 }
+                .padding()
             }
-            .padding()
+            .onAppear {
+                        if let firstDate = calendarViewModel.nextSevenDays.first {
+                            selectedDate = firstDate.date
+                            selectedDay = firstDate.day
+                        }
+                    }
+            
+            
+            Text("\(selectedDay), \(selectedDate)")
+            
+            
+            List(calendarViewModel.nextSevenDays, id: \.date) { date in
+                            VStack(alignment: .leading) {
+                                Text(date.day)
+                                    .font(.headline)
+                                Text(date.date)
+                                Text(date.time)
+                            }
+                        }
+
+            
             
             
             Spacer()
@@ -54,12 +62,4 @@ struct CalenderView: View {
     CalenderView()
 }
 
-struct CalendarPicker: View {
-    var body: some View {
-        VStack(spacing: 10){
-            Text("MON")
-                .font(.footnote)
-            Text("1")
-        }
-    }
-}
+
