@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		804220202C3FE50300A4E8B0 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8042201F2C3FE50300A4E8B0 /* WeatherManager.swift */; };
 		E435C0412C3FBAEC00F1D05B /* NC3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435C0402C3FBAEC00F1D05B /* NC3App.swift */; };
 		E435C0432C3FBAEC00F1D05B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435C0422C3FBAEC00F1D05B /* ContentView.swift */; };
 		E435C0452C3FBAEC00F1D05B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435C0442C3FBAEC00F1D05B /* Item.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8042201F2C3FE50300A4E8B0 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		E435C03D2C3FBAEC00F1D05B /* NC3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NC3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E435C0402C3FBAEC00F1D05B /* NC3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NC3App.swift; sourceTree = "<group>"; };
 		E435C0422C3FBAEC00F1D05B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				E435C05D2C3FBCE100F1D05B /* ServiceSample.swift */,
+				8042201F2C3FE50300A4E8B0 /* WeatherManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				E435C0452C3FBAEC00F1D05B /* Item.swift in Sources */,
 				E435C0612C3FC76A00F1D05B /* Location.swift in Sources */,
 				E435C0412C3FBAEC00F1D05B /* NC3App.swift in Sources */,
+				804220202C3FE50300A4E8B0 /* WeatherManager.swift in Sources */,
 				E435C05A2C3FBCD100F1D05B /* ViewModelSample.swift in Sources */,
 				E435C0532C3FBC7100F1D05B /* HomeScreenView.swift in Sources */,
 				E435C0642C3FC7E900F1D05B /* Recommendation.swift in Sources */,
