@@ -12,6 +12,13 @@ class RecommendationService {
     let locations = Recommendation().getLocations()
     let weatherManager = WeatherManager.shared
     
+    /// Receives a date and fetches recommended locations for outdoor
+    /// activities according to the given date
+    /// 
+    /// - Parameter date: The date to check
+    /// - Returns: An array of `RecommendedLocation`, containing locations
+    /// suitable for outdoor activities based on weather metrics
+    ///
     public func getRecommendedLocationsByDate(date: Date) async throws -> [RecommendedLocation] {
         var recommendedLocations = [RecommendedLocation]()
         
@@ -57,6 +64,11 @@ class RecommendationService {
         return recommendedLocations
     }
     
+    /// Fetches recommended locations for the nearest weekend
+    ///
+    /// - Returns: A tuple of arrays of `RecommendedLocation`, containing recommended locations
+    /// for saturday and sunday
+    ///
     public func getRecommendedLocationsForTheWeekend() async throws -> ([RecommendedLocation], [RecommendedLocation]){
         let (saturday, sunday) = Date.nearestWeekend(from: Date())
         
@@ -66,6 +78,9 @@ class RecommendationService {
         return (recommendedSaturday, recommendedSunday)
     }
     
+    /// Determines the suitability of a location for outdoor activities based on several weather metrics
+    ///
+    /// - Returns: A boolean which determines the suitability of a location
     public func determineLocationSuitability(location: RecommendedLocation) -> Bool {
         let isSafeFromRain = location.forecast.chanceOfRain < 40
         let isSafeFromUV = location.forecast.uvIndex <= 5

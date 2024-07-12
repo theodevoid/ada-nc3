@@ -78,6 +78,11 @@ class WeatherManager {
         return hourlyForecast
     }
     
+    /// Receives a day's forecast and returns its morning and afternoon forecast separately
+    ///
+    /// - Parameter forecast: A WeatherKit forecast
+    /// - Returns: A tuple containing the morning and afternoon forecast
+    /// 
     func getMorningAndAfternoonForecast(for forecast: Forecast<HourWeather>) -> (HourWeather, HourWeather) {
         let morningForecast = forecast.filter { hourWeather in
             let hour = Calendar.current.component(.hour, from: hourWeather.date)
