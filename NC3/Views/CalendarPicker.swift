@@ -20,6 +20,7 @@ struct CalendarPicker: View {
             VStack(spacing: 8){
                 Text(customDate.day.prefix(1))
                     .font(.footnote)
+                    .foregroundColor(customDate.day == "Sunday" || customDate.day == "Saturday" ? Color.red : Color.black)
                 ZStack {
                     Circle()
                         .foregroundColor(selectedDate == customDate.date ? Color.blue : Color.clear)

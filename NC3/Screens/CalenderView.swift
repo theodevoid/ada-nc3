@@ -11,6 +11,7 @@ struct CalenderView: View {
     
     @State private var selectedDate: String = ""
     @State private var selectedDay: String = ""
+    @State var isNoon: Bool = false
 
     @ObservedObject var calendarViewModel = CalendarViewModel()
 
@@ -38,16 +39,22 @@ struct CalenderView: View {
             
             
             Text("\(selectedDay), \(selectedDate)")
+                .padding()
             
             
-            List(calendarViewModel.nextSevenDays, id: \.date) { date in
-                            VStack(alignment: .leading) {
-                                Text(date.day)
-                                    .font(.headline)
-                                Text(date.date)
-                                Text(date.time)
-                            }
-                        }
+            VStack{
+                HStack{
+                    Text("Lorem Ipsum")
+                        .font(.title)
+                    
+                    Spacer()
+                    ToggleButton(isNoon: $isNoon)
+
+                    
+                }
+                .padding()
+                
+            }
 
             
             
@@ -58,8 +65,13 @@ struct CalenderView: View {
     }
 }
 
+
+
+
 #Preview {
     CalenderView()
 }
+
+
 
 
