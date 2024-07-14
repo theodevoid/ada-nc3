@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct DetailScreenView: View {
+    
+    // UI to test add to calendar
+    let currentLocation = Recommendation().locations[1]
+    let date = "2024/07/20 06:00"
+    
+    let event = EventManager()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: {
+            event.requestAccessAndSaveEvent(title: currentLocation.locationName, date: date)
+        }, label: {
+            Text("Add to Calendar")
+        })
     }
 }
 
