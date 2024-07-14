@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		804220202C3FE50300A4E8B0 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8042201F2C3FE50300A4E8B0 /* WeatherManager.swift */; };
+		804220512C442D6B00A4E8B0 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804220502C442D6B00A4E8B0 /* EventManager.swift */; };
 		E4122D6C2C4111F90047AAC5 /* RecommendationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4122D6B2C4111F90047AAC5 /* RecommendationService.swift */; };
 		E4122D6E2C4113A70047AAC5 /* RecommendedLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4122D6D2C4113A70047AAC5 /* RecommendedLocation.swift */; };
 		E4122D712C4117820047AAC5 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4122D702C4117820047AAC5 /* Date.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		8042201F2C3FE50300A4E8B0 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		804220502C442D6B00A4E8B0 /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		E4122D6B2C4111F90047AAC5 /* RecommendationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationService.swift; sourceTree = "<group>"; };
 		E4122D6D2C4113A70047AAC5 /* RecommendedLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedLocation.swift; sourceTree = "<group>"; };
 		E4122D702C4117820047AAC5 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				E435C05D2C3FBCE100F1D05B /* ServiceSample.swift */,
 				8042201F2C3FE50300A4E8B0 /* WeatherManager.swift */,
 				E4122D6B2C4111F90047AAC5 /* RecommendationService.swift */,
+				804220502C442D6B00A4E8B0 /* EventManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				804220512C442D6B00A4E8B0 /* EventManager.swift in Sources */,
 				E4122D6C2C4111F90047AAC5 /* RecommendationService.swift in Sources */,
 				E435C0432C3FBAEC00F1D05B /* ContentView.swift in Sources */,
 				E435C05E2C3FBCE100F1D05B /* ServiceSample.swift in Sources */,
@@ -382,6 +386,7 @@
 				DEVELOPMENT_TEAM = TUQX899L59;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "We use your calendar to add events.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We use your location to determine the best possible location for outdoor activities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -417,6 +422,7 @@
 				DEVELOPMENT_TEAM = TUQX899L59;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "We use your calendar to add events.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We use your location to determine the best possible location for outdoor activities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

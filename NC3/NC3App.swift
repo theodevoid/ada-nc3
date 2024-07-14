@@ -26,6 +26,7 @@ struct NC3App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+//            DetailScreenView() -> to test add to calendar
         }
         .modelContainer(sharedModelContainer)
     }
