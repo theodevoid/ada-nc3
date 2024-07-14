@@ -7,15 +7,14 @@
 
 import SwiftUI
 
-
 struct ToggleButton: View {
     
-    @Binding var isNoon: Bool
-    
+    @Binding var selectedTime: String
     
     var body: some View {
-        Toggle(isOn: $isNoon) {
+        Picker(selection: $selectedTime, label: Text("Time")) {
+            Text("Morning").tag("Morning")
+            Text("Noon").tag("Noon")
         }
-        .toggleStyle(SymbolToggleStyle(systemImage: "sunrise.fill", activeColor: .orange))
     }
 }

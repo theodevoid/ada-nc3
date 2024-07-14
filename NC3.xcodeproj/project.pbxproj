@@ -16,8 +16,8 @@
 		B72A3AAB2C3FD183005C0D64 /* CustomDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72A3AAA2C3FD183005C0D64 /* CustomDate.swift */; };
 		B72A3AAD2C3FD25F005C0D64 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72A3AAC2C3FD25F005C0D64 /* CalendarViewModel.swift */; };
 		B72A3AAF2C3FE3DE005C0D64 /* CalendarPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72A3AAE2C3FE3DE005C0D64 /* CalendarPicker.swift */; };
-		B72A3AB12C411717005C0D64 /* SymbolToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72A3AB02C411717005C0D64 /* SymbolToggleStyle.swift */; };
 		B72A3AB32C4117CA005C0D64 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72A3AB22C4117CA005C0D64 /* ToggleButton.swift */; };
+		B72A3AB52C4143F7005C0D64 /* CalendarRecCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72A3AB42C4143F7005C0D64 /* CalendarRecCard.swift */; };
 		E435C0412C3FBAEC00F1D05B /* NC3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435C0402C3FBAEC00F1D05B /* NC3App.swift */; };
 		E435C0432C3FBAEC00F1D05B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435C0422C3FBAEC00F1D05B /* ContentView.swift */; };
 		E435C0452C3FBAEC00F1D05B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435C0442C3FBAEC00F1D05B /* Item.swift */; };
@@ -42,8 +42,8 @@
 		B72A3AAA2C3FD183005C0D64 /* CustomDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDate.swift; sourceTree = "<group>"; };
 		B72A3AAC2C3FD25F005C0D64 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		B72A3AAE2C3FE3DE005C0D64 /* CalendarPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPicker.swift; sourceTree = "<group>"; };
-		B72A3AB02C411717005C0D64 /* SymbolToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolToggleStyle.swift; sourceTree = "<group>"; };
 		B72A3AB22C4117CA005C0D64 /* ToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
+		B72A3AB42C4143F7005C0D64 /* CalendarRecCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarRecCard.swift; sourceTree = "<group>"; };
 		E435C03D2C3FBAEC00F1D05B /* NC3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NC3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E435C0402C3FBAEC00F1D05B /* NC3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NC3App.swift; sourceTree = "<group>"; };
 		E435C0422C3FBAEC00F1D05B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -129,6 +129,7 @@
 				E435C05B2C3FBCDA00F1D05B /* ViewSample.swift */,
 				B72A3AAE2C3FE3DE005C0D64 /* CalendarPicker.swift */,
 				B72A3AB22C4117CA005C0D64 /* ToggleButton.swift */,
+				B72A3AB42C4143F7005C0D64 /* CalendarRecCard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -159,7 +160,6 @@
 			children = (
 				E435C0592C3FBCD100F1D05B /* ViewModelSample.swift */,
 				B72A3AAC2C3FD25F005C0D64 /* CalendarViewModel.swift */,
-				B72A3AB02C411717005C0D64 /* SymbolToggleStyle.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -272,6 +272,7 @@
 				E435C0532C3FBC7100F1D05B /* HomeScreenView.swift in Sources */,
 				E435C0642C3FC7E900F1D05B /* Recommendation.swift in Sources */,
 				E435C05C2C3FBCDA00F1D05B /* ViewSample.swift in Sources */,
+				B72A3AB52C4143F7005C0D64 /* CalendarRecCard.swift in Sources */,
 				B72A3AAF2C3FE3DE005C0D64 /* CalendarPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

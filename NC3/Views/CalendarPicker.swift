@@ -17,16 +17,18 @@ struct CalendarPicker: View {
     
     var body: some View {
         ZStack {
-            VStack(spacing: 8){
+            VStack(spacing: 4){
                 Text(customDate.day.prefix(1))
                     .font(.footnote)
+                    .fontWeight(.semibold)
                     .foregroundColor(customDate.day == "Sunday" || customDate.day == "Saturday" ? Color.red : Color.black)
                 ZStack {
                     Circle()
-                        .foregroundColor(selectedDate == customDate.date ? Color.blue : Color.clear)
+                        .foregroundColor(selectedDate == customDate.date ? Color.white : Color.clear)
                         .scaledToFit()
                     Text(customDate.date.prefix(2))
-                    .foregroundColor(selectedDate == customDate.date ? .white : .black)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.black)
                 }
             }
             .frame(width: 40)
