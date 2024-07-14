@@ -44,11 +44,7 @@ struct CalenderView: View {
                 
                 
                 
-                Text("\(selectedDay), \(selectedDate)")
-                    .font(.headline)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color(red: 0.81, green: 0.55, blue: 0.32))
-                    .padding(.horizontal)
+                SelectedDateDetail(selectedDay: $selectedDay, selectedDate: $selectedDate)
                 
                 
                 VStack{
@@ -70,11 +66,9 @@ struct CalenderView: View {
                     
                     ScrollView{
                         VStack{
-                            CalendarRecCard()
-                            CalendarRecCard()
-                            CalendarRecCard()
-                            CalendarRecCard()
-
+                            ForEach(1..<5, id: \.self) { index in
+                                                CalendarRecCard()
+                                            }
                         }
                     }
                     
@@ -104,6 +98,8 @@ struct CalenderView: View {
         CalenderView()
     }
 }
+
+
 
 
 
