@@ -9,20 +9,7 @@ import SwiftUI
 
 struct DetailScreenView: View {
     
-    // UI to test add to calendar
-    let currentLocation = Recommendation().locations[1]
-    let date = "2024/07/20 06:00"
-    
-    let event = EventManager()
-    
     var body: some View {
-//<<<<<<< HEAD
-//        Button(action: {
-//            event.requestAccessAndSaveEvent(title: currentLocation.locationName, date: date)
-//        }, label: {
-//            Text("Add to Calendar")
-//        })
-//=======
         
         // Ini buat Home Screen View
         NavigationStack {
@@ -37,6 +24,11 @@ struct DetailScreenView: View {
 }
 
 struct DetailView: View {
+    
+    let currentLocation = Recommendation().locations[1]
+    let date = "2024/07/20 06:00"
+    
+    let event = EventManager()
     
     // Ini yang dipindahin ke struct DetailScreenView
     
@@ -103,6 +95,7 @@ struct DetailView: View {
             
             VStack {
                 Button(action: {
+                    event.requestAccessAndSaveEvent(title: currentLocation.locationName, date: date)
                 }) {
                     Text("Add to Calendar")
                         .frame(width: 294)
@@ -122,7 +115,6 @@ struct DetailView: View {
         }
         .navigationTitle("Tebet Eco Park")
         .navigationBarTitleDisplayMode(.inline)
-//>>>>>>> 0b2b6ea (ui: Detail Screen View (lofi) done)
     }
 }
 
