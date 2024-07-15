@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Location {
+class Location: Identifiable{
     var city: String
     var locationName: String
     var latitude: Double
