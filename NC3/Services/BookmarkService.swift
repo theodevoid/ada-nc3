@@ -11,6 +11,4 @@ import SwiftData
 
 class Bookmarks {
     
-    
-    
 }
