@@ -59,12 +59,12 @@ struct DetailScreenView: View {
 }
 
 struct DetailView: View {
-
+    
     @Query var recommendedLocations: [RecommendedLocation]
     @Environment(\.modelContext) var modelContext
     let recommendedLocation : RecommendedLocation?
-    
     let event = EventManager()
+    
     
     var body: some View {
         VStack {
@@ -101,10 +101,10 @@ struct DetailView: View {
     func contains(_ recommendedLocation: RecommendedLocation) -> Bool {
         for recLoc in recommendedLocations {
             if ((recLoc.location.locationName == recommendedLocation.location.locationName) && (recLoc.time == recommendedLocation.time)) {
-            return true
+                return true
+            }
         }
-    }
-    return false
+        return false
     }
     
     func add(_ recommendedLocation: RecommendedLocation) {
@@ -116,6 +116,7 @@ struct DetailView: View {
         modelContext.delete(recommendedLocation)
     }
 }
+    
 //
 //#Preview {
 //    DetailScreenView()
