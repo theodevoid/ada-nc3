@@ -156,7 +156,6 @@ struct DetailScreenView: View {
             
         }.navigationTitle(recommendedLocation.location.locationName)
                     .navigationBarTitleDisplayMode(.inline)
-        
     }
     
     
