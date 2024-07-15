@@ -102,26 +102,24 @@ struct RecommendationView: View {
                 (
                 Text(item.locationName + ", ")
                     .font(.system(size: 28))
-                    .bold()
-                    .foregroundColor(Color(red: 0.95, green: 0.95, blue: 0.97)) +
+                    .bold() +
                 Text(item.city)
                     .font(.system(size: 26))
-                    .foregroundColor(Color(red: 0.95, green: 0.95, blue: 0.97))
-                )
+                ).foregroundColor(.subLabel)
                 .padding(.bottom, 1)
                 Text("Saturday, 20 July | 10:00 AM")
                   .font(Font.custom("SF Pro", size: 15))
-                  .foregroundColor(Color(red: 0.95, green: 0.95, blue: 0.97))
+                  .foregroundColor(.subLabel)
                 Spacer()
                 HStack {
                     Text("􀇕")
                         .font(Font.custom("SF Pro", size: 34))
-                        .foregroundColor(.white)
+                        .foregroundColor(.subLabel)
                     Spacer()
                     Text("Partly Cloudy | 29°")
                       .font(Font.custom("SF Pro", size: 17))
                       .multilineTextAlignment(.trailing)
-                      .foregroundColor(Color(red: 0.95, green: 0.95, blue: 0.97))
+                      .foregroundColor(.subLabel)
                 }
             }
             .padding(20)

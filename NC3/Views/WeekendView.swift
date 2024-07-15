@@ -57,25 +57,25 @@ struct WeekendView: View {
             .cornerRadius(12)
             
             VStack(alignment: .leading) {
+                (
                 Text(item.locationName + ", ")
-                    .font(.system(size: 15))
-                    .fontWeight(.semibold)
-                    .foregroundColor(Color(red: 0.95, green: 0.95, blue: 0.97)) +
+                    .fontWeight(.semibold) +
                 Text(item.city)
-                    .font(.system(size: 15))
-                    .foregroundColor(Color(red: 0.95, green: 0.95, blue: 0.97))
+                )
+                .font(.system(size: 15))
+                .foregroundColor(.subLabel)
                 Spacer()
                 HStack {
                     Text("􀇕")
                         .font(Font.custom("SF Pro", size: 20))
-                        .foregroundColor(.white)
+                        .foregroundColor(.subLabel)
                     Spacer()
                     Text("25°")
                       .font(
                         Font.custom("SF Pro", size: 17)
                           .weight(.semibold)
                       )
-                      .foregroundColor(Color(red: 0.95, green: 0.95, blue: 0.97))
+                      .foregroundColor(.subLabel)
                 }
             }
             .frame(width: 158)

@@ -17,8 +17,8 @@ struct HomeScreenView: View {
         ZStack {
             LinearGradient(
                 stops: [
-                    Gradient.Stop(color: Color(red: 0.91, green: 0.79, blue: 0.5), location: 0.00),
-                    Gradient.Stop(color: Color(red: 0.81, green: 0.55, blue: 0.32), location: 1.00),
+                    Gradient.Stop(color: .color1, location: 0.00),
+                    Gradient.Stop(color: .color2, location: 1.00),
                 ],
                 startPoint: UnitPoint(x: 0.5, y: 0),
                 endPoint: UnitPoint(x: 0.5, y: 1)
@@ -31,8 +31,8 @@ struct HomeScreenView: View {
                         .fill(
                             LinearGradient(
                                 stops: [
-                                    Gradient.Stop(color: Color(red: 0.91, green: 0.79, blue: 0.5).opacity(0.5), location: 0.00),
-                                    Gradient.Stop(color: Color(red: 0.81, green: 0.55, blue: 0.32).opacity(0.5), location: 1.00),
+                                    Gradient.Stop(color: .color1.opacity(0.5), location: 0.00),
+                                    Gradient.Stop(color: .color2.opacity(0.5), location: 1.00),
                                 ],
                                 startPoint: UnitPoint(x: 0.5, y: 0),
                                 endPoint: UnitPoint(x: 0.5, y: 1)
@@ -49,7 +49,6 @@ struct HomeScreenView: View {
                 Text("Weekend Adventures")
                     .font(.system(size: 28))
                     .bold()
-                    .foregroundColor(.black)
                     .padding(.horizontal, 20)
                     .padding(.bottom)
                 ScrollView {
@@ -57,7 +56,7 @@ struct HomeScreenView: View {
                         Text("Featured Places:")
                             .font(.system(size: 20))
                             .fontWeight(.semibold)
-                            .foregroundColor(Color(red: 0.63, green: 0.43, blue: 0.16))
+                            .foregroundColor(.titleLabel)
                             .padding(.horizontal, 20)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -66,7 +65,7 @@ struct HomeScreenView: View {
                     ZStack {
                         VStack{
                             Rectangle()
-                                .foregroundColor(.white)
+                                .foregroundColor(.container)
                                 .frame(width: 393.00003, height: 459.99997)
                                 .cornerRadius(40)
                         }
@@ -81,7 +80,7 @@ struct HomeScreenView: View {
                                 .frame(width: 175)
                                 Spacer()
                             }
-                            .padding(.top, 10)
+                            .padding(.top, 15)
                             HStack {
                                 Text("Saturday ")
                                     .font(.system(size: 17))
@@ -97,7 +96,6 @@ struct HomeScreenView: View {
                             .padding(.top, 5)
                             Text("20 July 2024")
                                 .font(Font.custom("SF Pro", size: 12))
-                                .foregroundColor(.black)
                                 .padding(.horizontal, 20)
                             WeekendView(items: model, index: $currentIndex)
                             HStack {
@@ -115,7 +113,6 @@ struct HomeScreenView: View {
                             .padding(.top, 5)
                             Text("20 July 2024")
                                 .font(Font.custom("SF Pro", size: 12))
-                                .foregroundColor(.black)
                                 .padding(.horizontal, 20)
                             WeekendView(items: model, index: $currentIndex)
                             Spacer()
