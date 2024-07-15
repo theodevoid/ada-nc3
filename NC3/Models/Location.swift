@@ -5,7 +5,9 @@
 //  Created by Theodore Mangowal on 11/07/24.
 //
 
-class Location: Identifiable {
+import Foundation
+
+class Location: Identifiable{
     var city: String
     var locationName: String
     var latitude: Double
