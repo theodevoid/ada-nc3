@@ -25,11 +25,11 @@ struct DetailScreenView: View {
 
 struct DetailView: View {
     
-    let currentLocation = Recommendation().locations[1]
-    let date = "2024/07/20 06:00"
-    
-    let event = EventManager()
-    
+//    let currentLocation = Recommendation().locations[1]
+//    let date = "2024/07/20 06:00"
+//    
+//    let event = EventManager()
+
     // Ini yang dipindahin ke struct DetailScreenView
     
     var body: some View {
@@ -95,7 +95,7 @@ struct DetailView: View {
             
             VStack {
                 Button(action: {
-                    event.requestAccessAndSaveEvent(title: currentLocation.locationName, date: date)
+//                    event.requestAccessAndSaveEvent(title: currentLocation.locationName, date: date)
                 }) {
                     Text("Add to Calendar")
                         .frame(width: 294)
