@@ -28,8 +28,9 @@ struct CalendarRecCard: View {
                 .background(
                     LinearGradient(
                         stops: [
-                            Gradient.Stop(color: .black.opacity(0.8), location: 0.00),
-                            Gradient.Stop(color: .black.opacity(0), location: 1.00),
+                            Gradient.Stop(color: .black.opacity(0.8), location: 0.10),
+                            Gradient.Stop(color: .black.opacity(0), location: 0.50),
+                            Gradient.Stop(color: .black.opacity(0.8), location: 0.91),
                         ],
                         startPoint: UnitPoint(x: 0.5, y: 0),
                         endPoint: UnitPoint(x: 0.5, y: 1)
@@ -54,6 +55,7 @@ struct CalendarRecCard: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .foregroundColor(Color.white)
+                        .frame(width: 49, height: 41)
                     
                     Spacer()
                     

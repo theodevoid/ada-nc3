@@ -21,14 +21,14 @@ struct CalendarPicker: View {
                 Text(customDate.day.prefix(1))
                     .font(.footnote)
                     .fontWeight(.semibold)
-                    .foregroundColor(customDate.day == "Sunday" || customDate.day == "Saturday" ? Color.red : Color.black)
+                    .foregroundColor(customDate.day == "Sunday" || customDate.day == "Saturday" ? Color.red : Color.text)
                 ZStack {
                     Circle()
-                        .foregroundColor(selectedDate == customDate.date ? Color.white : Color.clear)
+                        .foregroundColor(selectedDate == customDate.date ? Color.accentColor : Color.clear)
                         .scaledToFit()
                     Text(customDate.date.prefix(2))
                         .fontWeight(.semibold)
-                        .foregroundColor(.black)
+                        .foregroundColor(.text)
                 }
             }
             .frame(width: 40)

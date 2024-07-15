@@ -15,12 +15,12 @@ struct SelectedDateDetail: View {
     var body: some View {
         Text("\(selectedDay), \(selectedDate)")
             .font(.headline)
-            .fontWeight(.bold)
-            .foregroundColor(Color(red: 0.81, green: 0.55, blue: 0.32))
+            .fontWeight(.semibold)
+            .foregroundColor(Color(red: 0.808, green: 0.55, blue: 0.32))
             .padding(.horizontal)
     }
 }
 
 #Preview {
-    SelectedDateDetail(selectedDay: .constant("Monday"), selectedDate: .constant("15 July 2024"))
+    SelectedDateDetail(selectedDay: .constant("Monday"), selectedDate: .constant("15 Jul 2024"))
 }

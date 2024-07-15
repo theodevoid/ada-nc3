@@ -34,7 +34,15 @@ struct CalenderView: View {
                     
                     .padding()
                 }
-                .background(RadialGradient(gradient: Gradient(colors: [Color(red: 0.91, green: 0.79, blue: 0.5), Color(red: 0.81, green: 0.55, blue: 0.32)]), center: .center, startRadius: 5, endRadius: 450))
+                .background(LinearGradient(
+                    stops: [
+                    Gradient.Stop(color: Color(red: 0.81, green: 0.56, blue: 0.32).opacity(0.5), location: 0.00),
+                    Gradient.Stop(color: Color(red: 0.81, green: 0.56, blue: 0.32).opacity(0), location: 0.47),
+                    Gradient.Stop(color: Color(red: 0.81, green: 0.56, blue: 0.32).opacity(0.5), location: 1.00),
+                    ],
+                    startPoint: UnitPoint(x: 0, y: 0.5),
+                    endPoint: UnitPoint(x: 1, y: 0.5)
+                    ))
                 .onAppear {
                             if let firstDate = calendarViewModel.nextSevenDays.first {
                                 selectedDate = firstDate.date
@@ -76,14 +84,14 @@ struct CalenderView: View {
                     
                 }
                 .background(RoundedRectangle(cornerRadius: 25.0)
-                    .fill(.white))
+                    .fill(.accent))
 
                 
                 
                 
 
             }
-            .background(LinearGradient(colors: [Color(red: 0.91, green: 0.79, blue: 0.5), Color(red: 0.81, green: 0.55, blue: 0.32)], startPoint: .topLeading, endPoint: .bottomTrailing))
+            .background(Image("backgroundDarkLight").ignoresSafeArea())
             
         }
         .navigationTitle("Schedule")

@@ -412,7 +412,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NC3/Preview Content\"";
-				DEVELOPMENT_TEAM = TUQX899L59;
+				DEVELOPMENT_TEAM = J56U42A6JG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "We use your calendar to add events.";
@@ -448,7 +448,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NC3/Preview Content\"";
-				DEVELOPMENT_TEAM = TUQX899L59;
+				DEVELOPMENT_TEAM = J56U42A6JG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "We use your calendar to add events.";
