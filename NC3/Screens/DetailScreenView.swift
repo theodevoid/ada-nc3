@@ -9,15 +9,11 @@ import SwiftUI
 
 struct DetailScreenView: View {
     
-    // UI to test add to calendar
-    let currentLocation = Recommendation().locations[1]
-    let date = "2024/07/20 06:00"
-    
-    let event = EventManager()
+    @StateObject var detailScreenViewModel = DetailScreenViewModel()
     
     var body: some View {
         Button(action: {
-            event.requestAccessAndSaveEvent(title: currentLocation.locationName, date: date)
+            detailScreenViewModel.addToCalendar(title: detailScreenViewModel.currentLocation.locationName, date: detailScreenViewModel.date)
         }, label: {
             Text("Add to Calendar")
         })

@@ -8,16 +8,16 @@
 import Foundation
 import EventKit
 
-let eventStore: EKEventStore = EKEventStore()
-
 class EventManager {
+    
+    static let shared = EventManager()
+    let eventStore: EKEventStore = EKEventStore()
     
     /// Request access to calendar
     /// Save event to calendar
     ///
     /// - Parameter title: The location name
     /// - Parameter date: The event date (still in String format)
-    ///
 
     func requestAccessAndSaveEvent(title: String, date: String) {
         eventStore.requestFullAccessToEvents { (granted, error) in
@@ -29,15 +29,15 @@ class EventManager {
                 formatter.dateFormat = "yyyy/MM/dd HH:mm"
                 let date = formatter.date(from: date)
 
-                let event = EKEvent(eventStore: eventStore)
+                let event = EKEvent(eventStore: self.eventStore)
                 event.title = title
                 event.startDate = date
                 event.endDate = date!.addingTimeInterval(60 * 60 * 2)
                 event.notes = "This is a note"
-                event.calendar = eventStore.defaultCalendarForNewEvents
+                event.calendar = self.eventStore.defaultCalendarForNewEvents
 
                 do {
-                    try eventStore.save(event, span: .thisEvent)
+                    try self.eventStore.save(event, span: .thisEvent)
                     print("Saved Event")
                 } catch let error as NSError {
                     print("Failed to save event with error: \(error)")
