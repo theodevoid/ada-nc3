@@ -38,7 +38,8 @@ class RecommendationService {
                     chanceOfRain: morningForecast.precipitationChance
                 ),
                 time: .morning,
-                symbol: morningForecast.symbolName
+                symbol: morningForecast.symbolName,
+                date: date
             )
             
             let afternooonRecommendedLocation = RecommendedLocation(
@@ -49,7 +50,8 @@ class RecommendationService {
                     chanceOfRain: afternoonForecast.precipitationChance
                 ),
                 time: .afternoon,
-                symbol: afternoonForecast.symbolName
+                symbol: afternoonForecast.symbolName,
+                date: date
             )
             
             if (determineLocationSuitability(location: morningRecommendedLocation)) {
@@ -86,6 +88,6 @@ class RecommendationService {
         let isSafeFromUV = location.forecast.uvIndex <= 5
         let isSafeFromTemperature = location.forecast.temperature <= 35 && location.forecast.temperature >= 20
         
-        return isSafeFromUV && isSafeFromUV && isSafeFromTemperature
+        return isSafeFromRain && isSafeFromUV && isSafeFromTemperature
     }
 }
