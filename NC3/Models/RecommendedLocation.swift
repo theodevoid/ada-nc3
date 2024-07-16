@@ -27,7 +27,7 @@ enum RecommendedLocationTime: Codable {
 
 @Model
 class RecommendedLocation: Identifiable, Hashable {
-    var id = UUID()
+    var id: String
     var location: Location
     var forecast: SimplifiedForecast
     var time: RecommendedLocationTime
@@ -40,5 +40,6 @@ class RecommendedLocation: Identifiable, Hashable {
         self.time = time
         self.symbol = symbol
         self.date = date
+        self.id = location.locationName + date.formatted() + "\(time)"
     }
 }
