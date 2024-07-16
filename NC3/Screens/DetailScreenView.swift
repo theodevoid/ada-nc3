@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct DetailScreenView: View {
     
@@ -14,62 +15,96 @@ struct DetailScreenView: View {
 ///    let date = "2024/07/20 06:00"
 ///
 ///    let event = EventManager()
-
-    let locations = Recommendation().getLocations()
-    @State private var bookmarks = Bookmarks()
     
+    @Query var recommendedLocations: [RecommendedLocation]
+    @Environment(\.modelContext) var modelContext
+    
+    @State var locationsData: [RecommendedLocation] = []
+    
+    let recommendationService = RecommendationService()
     
     var body: some View {
         NavigationView {
-            List(locations) { location in
-                NavigationLink(destination: DetailView(location: location)) {
+            List(locationsData) { recLoc in
+                NavigationLink(destination: DetailView(recommendedLocaton: recLoc)) {
                     HStack {
-                        Text(location.locationName)
-
-                        if bookmarks.contains(location) {
+                        Text(recLoc.location.locationName)
+                        if (contains(recLoc)) {
                             Spacer()
                             Image(systemName: "heart.fill")
                         }
-                        
                     }
                 }
             }
             .navigationTitle("Locations")
-        }.environment(bookmarks)
+        }
+        .onAppear {
+            Task {
+                let (locations, _) = try await self.recommendationService.getRecommendedLocationsForTheWeekend()
+                
+                locationsData = locations
+            }
+        }
 ///        Button(action: {
 ///            event.requestAccessAndSaveEvent(title: currentLocation.locationName, date: date)
 ///        }, label: {
 ///            Text("Add to Calendar")
 ///        })
     }
+    
+    func contains(_ recommendedLocation: RecommendedLocation) -> Bool {
+        for recLoc in recommendedLocations {
+            if recLoc.location.locationName == recommendedLocation.location.locationName {
+            return true
+        }
+    }
+    return false
+    }
 }
 
 struct DetailView: View {
-    
-    let location : Location?
-    @Environment(Bookmarks.self) var bookmarks
+
+    @Query var recommendedLocations: [RecommendedLocation]
+    @Environment(\.modelContext) var modelContext
+    let recommendedLocaton : RecommendedLocation?
     
     var body: some View {
         VStack {
             Button(action: {
-                if (bookmarks.contains(location!)) {
-                    bookmarks.remove(location!)
+                if (contains(recommendedLocaton!)) {
+                    remove(recommendedLocaton!)
                 } else {
-                    bookmarks.add(location!)
+                    add(recommendedLocaton!)
                 }
             }, label: {
-                if (bookmarks.contains(location!)) {
+                if (contains(recommendedLocaton!)) {
                     Text("Remove from Bookmarks")
                 } else {
                     Text("Add to Bookmarks")
                 }
             })
-        }.navigationTitle(location!.locationName)
-        
-        
+        }.navigationTitle((recommendedLocaton?.location.locationName)!)
+    }
+    
+    func contains(_ recommendedLocation: RecommendedLocation) -> Bool {
+        for recLoc in recommendedLocations {
+            if recLoc.location.locationName == recommendedLocation.location.locationName {
+            return true
+        }
+    }
+    return false
+    }
+    
+    func add(_ recommendedLocation: RecommendedLocation) {
+        modelContext.insert(recommendedLocation)
+    }
+    
+    // remove dr array
+    func remove(_ recommendedLocation: RecommendedLocation) {
+        modelContext.delete(recommendedLocation)
     }
 }
-
-#Preview {
-    DetailScreenView()
-}
+//
+//#Preview {
+//    DetailScreenView()
+//}

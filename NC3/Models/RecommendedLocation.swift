@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import SwiftData
 
-class SimplifiedForecast {
+struct SimplifiedForecast: Codable {
     var temperature: Double
     var uvIndex: Int
     var chanceOfRain: Double
@@ -19,12 +20,14 @@ class SimplifiedForecast {
     }
 }
 
-enum RecommendedLocationTime {
+enum RecommendedLocationTime: Codable {
     case morning
     case afternoon
 }
 
-class RecommendedLocation: Identifiable{
+@Model
+class RecommendedLocation: Identifiable, Hashable {
+    var id = UUID()
     var location: Location
     var forecast: SimplifiedForecast
     var time: RecommendedLocationTime
