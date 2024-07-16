@@ -8,10 +8,7 @@
 import SwiftUI
 
 struct HomeScreenView: View {
-    @State var currentIndex: Int = 0
-    
-    @State var model: [Location] = []
-    @State var selectedSide: String = "Morning"
+    @StateObject private var viewModel = HomeViewModel()
     
     var body: some View {
         ZStack {
@@ -60,7 +57,7 @@ struct HomeScreenView: View {
                             .padding(.horizontal, 20)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    RecommendationView(items: model, index: $currentIndex)
+                    RecommendationView(items: viewModel.model, index: $viewModel.currentIndex)
                     Spacer()
                     ZStack {
                         VStack{
@@ -72,9 +69,9 @@ struct HomeScreenView: View {
                         VStack(alignment: .leading) {
                             HStack() {
                                 Spacer()
-                                Picker("Pick", selection: $selectedSide) {
-                                    Text("Morning")
-                                    Text("Evening")
+                                Picker("Pick", selection: $viewModel.selectedSide) {
+                                    Text("Morning").tag("Morning")
+                                    Text("Evening").tag("Evening")
                                 }
                                 .pickerStyle(SegmentedPickerStyle())
                                 .frame(width: 175)
@@ -97,7 +94,7 @@ struct HomeScreenView: View {
                             Text("20 July 2024")
                                 .font(Font.custom("SF Pro", size: 12))
                                 .padding(.horizontal, 20)
-                            WeekendView(items: model, index: $currentIndex)
+                            WeekendView(items: viewModel.filteredSaturdayRecommendations, index: $viewModel.currentIndex)
                             HStack {
                                 Text("Sunday ")
                                     .font(.system(size: 17))
@@ -114,15 +111,15 @@ struct HomeScreenView: View {
                             Text("20 July 2024")
                                 .font(Font.custom("SF Pro", size: 12))
                                 .padding(.horizontal, 20)
-                            WeekendView(items: model, index: $currentIndex)
+                            WeekendView(items: viewModel.filteredSundayRecommendations, index: $viewModel.currentIndex)
                             Spacer()
                         }
                     }
                 }
-                .onAppear {
-                    //DUMMY DATA
-                    model = Recommendation().getLocations()
-                }
+//                .onAppear {
+//                    //DUMMY DATA
+//                    viewModel.model = Recommendation().getLocations()
+//                }
             }
             
         }

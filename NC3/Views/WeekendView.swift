@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct WeekendView: View {
-    var list: [Location]
+    var list: [RecommendedLocation]
     var spacing: CGFloat
     @Binding var index: Int
     
-    init(items: [Location], spacing: CGFloat = 10,index: Binding<Int>) {
+    init(items: [RecommendedLocation], spacing: CGFloat = 10,index: Binding<Int>) {
         self.list = items
         self.spacing = spacing
         self._index = index
@@ -24,7 +24,7 @@ struct WeekendView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: spacing) {
-                    ForEach(list) { item in
+                    ForEach(list, id: \.id) { item in
                         itemView(item)
                             .frame(width: width)
                     }
@@ -36,9 +36,9 @@ struct WeekendView: View {
     }
     
     @ViewBuilder
-    func itemView(_ item: Location) -> some View {
+    func itemView(_ item: RecommendedLocation) -> some View {
         ZStack {
-            Image(item.image)
+            Image(item.location.image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 178, height: 119)
@@ -58,9 +58,9 @@ struct WeekendView: View {
             
             VStack(alignment: .leading) {
                 (
-                Text(item.locationName + ", ")
+                    Text(item.location.locationName + ", ")
                     .fontWeight(.semibold) +
-                Text(item.city)
+                    Text(item.location.city)
                 )
                 .font(.system(size: 15))
                 .foregroundColor(.subLabel)
@@ -70,7 +70,7 @@ struct WeekendView: View {
                         .font(Font.custom("SF Pro", size: 20))
                         .foregroundColor(.subLabel)
                     Spacer()
-                    Text("25°")
+                    Text(String(item.forecast.temperature) + "°")
                       .font(
                         Font.custom("SF Pro", size: 17)
                           .weight(.semibold)

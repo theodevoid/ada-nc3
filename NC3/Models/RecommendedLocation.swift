@@ -24,7 +24,7 @@ enum RecommendedLocationTime {
     case afternoon
 }
 
-class RecommendedLocation: Identifiable{
+class RecommendedLocation: Identifiable {
     var location: Location
     var forecast: SimplifiedForecast
     var time: RecommendedLocationTime

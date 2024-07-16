@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct RecommendationView: View {
-    var list: [Location]
+    var list: [RecommendedLocation]
     
     var spacing: CGFloat
     var trailingSpace: CGFloat
     @Binding var index: Int
     
-    init(items: [Location], spacing: CGFloat = 20, trailingSpace: CGFloat = 55, index: Binding<Int>) {
+    init(items: [RecommendedLocation], spacing: CGFloat = 20, trailingSpace: CGFloat = 55, index: Binding<Int>) {
         self.list = items
         self.spacing = spacing
         self.trailingSpace = trailingSpace
@@ -52,31 +52,12 @@ struct RecommendationView: View {
             )
         }
         .frame(height: 251)
-        HStack(alignment: .center, spacing: 8) {
-            Spacer()
-            ForEach(0...3, id: \.self) {x in
-                if currentIndex != x {
-                    Circle()
-                        .frame(width: 8, height: 8)
-                        .foregroundColor(.white)
-                        .opacity(0.3)
-                } else {
-                    Circle()
-                        .frame(width: 8, height: 8)
-                        .foregroundColor(.white)
-                }
-            }
-            Spacer()
-        }
-        .padding(.horizontal, 12)
-        .padding(.vertical, 8)
-        .cornerRadius(50)
     }
     
     @ViewBuilder
-    func itemView(_ item: Location) -> some View {
+    func itemView(_ item: RecommendedLocation) -> some View {
         ZStack {
-            Image(item.image)
+            Image(item.location.image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 341, height: 251)
@@ -100,10 +81,10 @@ struct RecommendationView: View {
             
             VStack(alignment: .leading) {
                 (
-                Text(item.locationName + ", ")
+                    Text(item.location.locationName + ", ")
                     .font(.system(size: 28))
                     .bold() +
-                Text(item.city)
+                    Text(item.location.city)
                     .font(.system(size: 26))
                 ).foregroundColor(.subLabel)
                 .padding(.bottom, 1)
@@ -112,11 +93,11 @@ struct RecommendationView: View {
                   .foregroundColor(.subLabel)
                 Spacer()
                 HStack {
-                    Text("􀇕")
+                    Image(systemName: item.symbol)
                         .font(Font.custom("SF Pro", size: 34))
                         .foregroundColor(.subLabel)
                     Spacer()
-                    Text("Partly Cloudy | 29°")
+                    Text(String(item.forecast.temperature))
                       .font(Font.custom("SF Pro", size: 17))
                       .multilineTextAlignment(.trailing)
                       .foregroundColor(.subLabel)
