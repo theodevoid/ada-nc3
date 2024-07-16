@@ -29,11 +29,13 @@ class RecommendedLocation {
     var forecast: SimplifiedForecast
     var time: RecommendedLocationTime
     var symbol: String
+    var date: Date
     
-    init (location: Location, forecast: SimplifiedForecast, time: RecommendedLocationTime, symbol: String) {
+    init (location: Location, forecast: SimplifiedForecast, time: RecommendedLocationTime, symbol: String, date: Date) {
         self.location = location
         self.forecast = forecast
         self.time = time
         self.symbol = symbol
+        self.date = date
     }
 }
