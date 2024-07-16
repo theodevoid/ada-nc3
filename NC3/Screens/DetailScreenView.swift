@@ -54,7 +54,7 @@ struct DetailScreenView: View {
     
     func contains(_ recommendedLocation: RecommendedLocation) -> Bool {
         for recLoc in recommendedLocations {
-            if recLoc.location.locationName == recommendedLocation.location.locationName {
+            if ((recLoc.location.locationName == recommendedLocation.location.locationName) && (recLoc.time == recommendedLocation.time)) {
             return true
         }
     }
@@ -88,7 +88,7 @@ struct DetailView: View {
     
     func contains(_ recommendedLocation: RecommendedLocation) -> Bool {
         for recLoc in recommendedLocations {
-            if recLoc.location.locationName == recommendedLocation.location.locationName {
+            if ((recLoc.location.locationName == recommendedLocation.location.locationName) && (recLoc.time == recommendedLocation.time)) {
             return true
         }
     }
