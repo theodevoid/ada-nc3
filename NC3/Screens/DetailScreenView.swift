@@ -14,7 +14,6 @@ struct DetailScreenView: View {
 ///    let currentLocation = Recommendation().locations[1]
 ///    let date = "2024/07/20 06:00"
 ///
-///    let event = EventManager()
     
     @Query var recommendedLocations: [RecommendedLocation]
     @Environment(\.modelContext) var modelContext
@@ -26,9 +25,10 @@ struct DetailScreenView: View {
     var body: some View {
         NavigationView {
             List(locationsData) { recLoc in
-                NavigationLink(destination: DetailView(recommendedLocaton: recLoc)) {
+                NavigationLink(destination: DetailView(recommendedLocation: recLoc)) {
                     HStack {
                         Text(recLoc.location.locationName)
+                        Text("\(recLoc.time)")
                         if (contains(recLoc)) {
                             Spacer()
                             Image(systemName: "heart.fill")
@@ -45,11 +45,7 @@ struct DetailScreenView: View {
                 locationsData = locations
             }
         }
-///        Button(action: {
-///            event.requestAccessAndSaveEvent(title: currentLocation.locationName, date: date)
-///        }, label: {
-///            Text("Add to Calendar")
-///        })
+
     }
     
     func contains(_ recommendedLocation: RecommendedLocation) -> Bool {
@@ -66,24 +62,40 @@ struct DetailView: View {
 
     @Query var recommendedLocations: [RecommendedLocation]
     @Environment(\.modelContext) var modelContext
-    let recommendedLocaton : RecommendedLocation?
+    let recommendedLocation : RecommendedLocation?
+    
+    let event = EventManager()
     
     var body: some View {
         VStack {
             Button(action: {
-                if (contains(recommendedLocaton!)) {
-                    remove(recommendedLocaton!)
+                if (contains(recommendedLocation!)) {
+                    remove(recommendedLocation!)
                 } else {
-                    add(recommendedLocaton!)
+                    add(recommendedLocation!)
                 }
             }, label: {
-                if (contains(recommendedLocaton!)) {
+                if (contains(recommendedLocation!)) {
                     Text("Remove from Bookmarks")
                 } else {
                     Text("Add to Bookmarks")
                 }
             })
-        }.navigationTitle((recommendedLocaton?.location.locationName)!)
+            
+            Button(action: {
+                if (event.bool) {
+                    
+                } else {
+                    event.requestAccessAndSaveEvent(title: recommendedLocation!.location.locationName, date: recommendedLocation!.date, time: recommendedLocation!.time)
+                }
+            }, label: {
+                if (event.bool) {
+                    Text("Disabled")
+                } else {
+                    Text("Add to calendar")
+                }
+            })
+        }.navigationTitle((recommendedLocation?.location.locationName)!)
     }
     
     func contains(_ recommendedLocation: RecommendedLocation) -> Bool {
