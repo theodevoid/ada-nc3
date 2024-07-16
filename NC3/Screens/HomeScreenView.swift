@@ -49,77 +49,71 @@ struct HomeScreenView: View {
                     .padding(.horizontal, 20)
                     .padding(.bottom)
                 ScrollView {
-                    VStack() {
-                        Text("Featured Places:")
-                            .font(.system(size: 20))
-                            .fontWeight(.semibold)
-                            .foregroundColor(.titleLabel)
-                            .padding(.horizontal, 20)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
                     RecommendationView(items: viewModel.model, index: $viewModel.currentIndex)
                     Spacer()
                     ZStack {
                         VStack{
                             Rectangle()
                                 .foregroundColor(.container)
-                                .frame(width: 393.00003, height: 459.99997)
+                                .frame(width: 393.00003, height: 1140)
                                 .cornerRadius(40)
                         }
-                        VStack(alignment: .leading) {
+                        VStack {
                             HStack() {
                                 Spacer()
                                 Picker("Pick", selection: $viewModel.selectedSide) {
                                     Text("Morning").tag("Morning")
-                                    Text("Evening").tag("Evening")
+                                    Text("Afternoon").tag("Afternoon")
                                 }
                                 .pickerStyle(SegmentedPickerStyle())
                                 .frame(width: 175)
                                 Spacer()
                             }
                             .padding(.top, 15)
-                            HStack {
-                                Text("Saturday ")
-                                    .font(.system(size: 17))
-                                    .bold() +
-                                Text("Picks:")
-                                    .font(.system(size: 17))
-                                Spacer()
-                                Text("See More")
-                                    .font(Font.custom("SF Pro", size: 15))
-                                    .foregroundColor(Color(red: 0, green: 0.48, blue: 1))
-                            }
-                            .padding(.horizontal, 20)
-                            .padding(.top, 5)
-                            Text("20 July 2024")
-                                .font(Font.custom("SF Pro", size: 12))
+                            VStack (alignment: .leading){
+                                HStack {
+                                    Text("Saturday ")
+                                        .font(.system(size: 17))
+                                        .bold() +
+                                    Text("Picks:")
+                                        .font(.system(size: 17))
+                                    Spacer()
+                                    Text("See More")
+                                        .font(Font.custom("SF Pro", size: 15))
+                                        .foregroundColor(.orange)
+                                }
                                 .padding(.horizontal, 20)
+                                .padding(.top, 5)
+                                let (nextSaturday, _) = Date.nearestWeekend(from: Date())
+                                Text(viewModel.formatDate(date: nextSaturday))                    .font(Font.custom("SF Pro", size: 16))
+                                    .padding(.horizontal, 20)
+                            }
+                            .padding(.vertical, 10)
                             WeekendView(items: viewModel.filteredSaturdayRecommendations, index: $viewModel.currentIndex)
-                            HStack {
-                                Text("Sunday ")
-                                    .font(.system(size: 17))
-                                    .bold() +
-                                Text("Picks:")
-                                    .font(.system(size: 17))
-                                Spacer()
-                                Text("See More")
-                                    .font(Font.custom("SF Pro", size: 15))
-                                    .foregroundColor(Color(red: 0, green: 0.48, blue: 1))
-                            }
-                            .padding(.horizontal, 20)
-                            .padding(.top, 5)
-                            Text("20 July 2024")
-                                .font(Font.custom("SF Pro", size: 12))
+                            VStack (alignment: .leading){
+                                HStack {
+                                    Text("Sunday ")
+                                        .font(.system(size: 17))
+                                        .bold() +
+                                    Text("Picks:")
+                                        .font(.system(size: 17))
+                                    Spacer()
+                                    Text("See More")
+                                        .font(Font.custom("SF Pro", size: 15))
+                                        .foregroundColor(.orange)
+                                }
                                 .padding(.horizontal, 20)
+                                .padding(.top, 5)
+                                let (_, nextSunday) = Date.nearestWeekend(from: Date())
+                                Text(viewModel.formatDate(date: nextSunday))                    .font(Font.custom("SF Pro", size: 16))
+                                    .padding(.horizontal, 20)
+                            }
+                            .padding(.vertical, 10)
                             WeekendView(items: viewModel.filteredSundayRecommendations, index: $viewModel.currentIndex)
                             Spacer()
                         }
                     }
                 }
-//                .onAppear {
-//                    //DUMMY DATA
-//                    viewModel.model = Recommendation().getLocations()
-//                }
             }
             
         }

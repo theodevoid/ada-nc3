@@ -29,6 +29,19 @@ class HomeViewModel: ObservableObject {
         fetchRecommendations()
     }
 
+    func formatDayDate(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE, dd MMMM | h:mm a"
+        return formatter.string(from: date)
+    }
+    
+    func formatDate(date: Date) -> String {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "d MMMM yyyy"
+            return formatter.string(from: date)
+        }
+
+    
     func fetchRecommendations() {
         Task {
             do {

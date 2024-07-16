@@ -22,64 +22,75 @@ struct WeekendView: View {
         GeometryReader { proxy in
             let width = proxy.size.width / 2.1 - spacing
             
-            ScrollView(.horizontal, showsIndicators: false) {
+            VStack(spacing: spacing) {
                 HStack(spacing: spacing) {
-                    ForEach(list, id: \.id) { item in
+                    ForEach(list.prefix(2), id: \.id) { item in
                         itemView(item)
                             .frame(width: width)
                     }
                 }
-                .padding(.horizontal, spacing)
+                
+                HStack(spacing: spacing) {
+                    ForEach(list.suffix(2), id: \.id) { item in
+                        itemView(item)
+                            .frame(width: width)
+                    }
+                }
             }
+            .padding(.horizontal, 15)
         }
-        .frame(height: 119)
+        .frame(height: 2 * (214 + spacing))
     }
     
     @ViewBuilder
     func itemView(_ item: RecommendedLocation) -> some View {
         ZStack {
-            Image(item.location.image)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 178, height: 119)
-                .cornerRadius(12)
+            Rectangle()
+                .frame(height: 214)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+                .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4)
             
-            LinearGradient(
-                stops: [
-                    Gradient.Stop(color: .black.opacity(0.8), location: 0.00),
-                    Gradient.Stop(color: .black.opacity(0), location: 0.65),
-                    Gradient.Stop(color: .black.opacity(0), location: 0.92),
-                ],
-                startPoint: UnitPoint(x: 0.5, y: 0),
-                endPoint: UnitPoint(x: 0.5, y: 1)
-            )
-            .frame(width: 178, height: 119)
-            .cornerRadius(12)
-            
-            VStack(alignment: .leading) {
-                (
-                    Text(item.location.locationName + ", ")
-                    .fontWeight(.semibold) +
-                    Text(item.location.city)
-                )
-                .font(.system(size: 15))
-                .foregroundColor(.subLabel)
-                Spacer()
-                HStack {
-                    Text("􀇕")
-                        .font(Font.custom("SF Pro", size: 20))
-                        .foregroundColor(.subLabel)
-                    Spacer()
-                    Text(String(item.forecast.temperature) + "°")
-                      .font(
-                        Font.custom("SF Pro", size: 17)
-                          .weight(.semibold)
-                      )
-                      .foregroundColor(.subLabel)
+            VStack {
+                ZStack {
+                    Image(item.location.image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                    
+                    LinearGradient(
+                        stops: [
+                            Gradient.Stop(color: .black.opacity(0.8), location: 0.00),
+                            Gradient.Stop(color: .black.opacity(0), location: 0.65),
+                            Gradient.Stop(color: .black.opacity(0), location: 0.92),
+                        ],
+                        startPoint: UnitPoint(x: 0.5, y: 0),
+                        endPoint: UnitPoint(x: 0.5, y: 1)
+                    )
                 }
+                .frame(width: 178, height: 119)
+                .cornerRadius(10)
+                Spacer()
+                VStack (alignment: .leading) {
+                    (
+                        Text(item.location.locationName + ", ")
+                            .fontWeight(.semibold) +
+                        Text(item.location.city)
+                    )
+                    .font(.system(size: 15))
+                    Spacer()
+                    HStack {
+                        Image(systemName: item.symbol)
+                            .font(Font.custom("SF Pro", size: 20))
+                        Spacer()
+                        Text(String(item.forecast.temperature) + "°")
+                            .font(
+                                Font.custom("SF Pro", size: 17)
+                                    .weight(.semibold)
+                            )
+                    }
+                }
+                .padding(10)
             }
-            .frame(width: 158)
-            .padding(10)
         }
     }
 }

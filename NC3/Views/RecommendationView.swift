@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct RecommendationView: View {
+    @StateObject private var viewModel = HomeViewModel()
+    @State private var randomItems: [RecommendedLocation] = []
     var list: [RecommendedLocation]
     
     var spacing: CGFloat
     var trailingSpace: CGFloat
     @Binding var index: Int
+    
     
     init(items: [RecommendedLocation], spacing: CGFloat = 20, trailingSpace: CGFloat = 55, index: Binding<Int>) {
         self.list = items
@@ -30,7 +33,7 @@ struct RecommendationView: View {
             let adjustmentWidth = (trailingSpace / 2) - spacing
             
             HStack(spacing: spacing) {
-                ForEach(list){ item in
+                ForEach(list.prefix(4)){ item in
                     itemView(item)
                         .frame(width: proxy.size.width - trailingSpace)
                 }
@@ -47,63 +50,62 @@ struct RecommendationView: View {
                         let progress = -offsetX / width
                         let roundIndex = progress.rounded()
                         
-                        currentIndex = max(min(currentIndex + Int(roundIndex), list.count - 1), 0)
+                        currentIndex = max(min(currentIndex + Int(roundIndex), 3), 0)
                     })
             )
         }
-        .frame(height: 251)
+        .frame(height: 362)
+        .padding(.bottom, 20)
     }
     
     @ViewBuilder
     func itemView(_ item: RecommendedLocation) -> some View {
         ZStack {
-            Image(item.location.image)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 341, height: 251)
-                .cornerRadius(12)
-            
             Rectangle()
-              .foregroundColor(.clear)
-              .frame(width: 341, height: 251)
-              .background(
-                LinearGradient(
-                  stops: [
-                    Gradient.Stop(color: .black.opacity(0.8), location: 0.00),
-                    Gradient.Stop(color: .black.opacity(0), location: 0.55),
-                    Gradient.Stop(color: .black.opacity(0.8), location: 1.00),
-                  ],
-                  startPoint: UnitPoint(x: 0.5, y: 0),
-                  endPoint: UnitPoint(x: 0.5, y: 1)
-                )
-              )
-              .cornerRadius(10)
+                .frame(height: 362)
+                .foregroundColor(.white)
+                .cornerRadius(10)
             
-            VStack(alignment: .leading) {
-                (
-                    Text(item.location.locationName + ", ")
-                    .font(.system(size: 28))
-                    .bold() +
-                    Text(item.location.city)
-                    .font(.system(size: 26))
-                ).foregroundColor(.subLabel)
-                .padding(.bottom, 1)
-                Text("Saturday, 20 July | 10:00 AM")
-                  .font(Font.custom("SF Pro", size: 15))
-                  .foregroundColor(.subLabel)
+            VStack {
+                ZStack {
+                    Image(item.location.image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                    
+                    LinearGradient(
+                        stops: [
+                            Gradient.Stop(color: .black.opacity(0.8), location: 0.00),
+                            Gradient.Stop(color: .black.opacity(0), location: 0.55),
+                            Gradient.Stop(color: .black.opacity(0.8), location: 1.00),
+                        ],
+                        startPoint: UnitPoint(x: 0.5, y: 0),
+                        endPoint: UnitPoint(x: 0.5, y: 1)
+                    )
+                }
+                
+                .frame(width: 341, height: 251)
+                .cornerRadius(10)
                 Spacer()
                 HStack {
+                    VStack (alignment: .leading) {
+                        (
+                            Text(item.location.locationName + ", ")
+                            .font(.system(size: 20))
+                            .bold() +
+                            Text(item.location.city)
+                            .font(.system(size: 20))
+                        )
+                        .padding(.bottom, 1)
+                        Text(viewModel.formatDayDate(date: item.date))
+                          .font(Font.custom("SF Pro", size: 17))
+                    }
+                    Spacer()
                     Image(systemName: item.symbol)
                         .font(Font.custom("SF Pro", size: 34))
-                        .foregroundColor(.subLabel)
-                    Spacer()
-                    Text(String(item.forecast.temperature))
-                      .font(Font.custom("SF Pro", size: 17))
-                      .multilineTextAlignment(.trailing)
-                      .foregroundColor(.subLabel)
                 }
+                .padding(.horizontal, 10)
+                Spacer()
             }
-            .padding(20)
         }
     }
 }
