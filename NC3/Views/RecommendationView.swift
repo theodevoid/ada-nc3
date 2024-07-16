@@ -100,7 +100,7 @@ struct RecommendationView: View {
                           .font(Font.custom("SF Pro", size: 17))
                     }
                     Spacer()
-                    Image(systemName: item.symbol)
+                    Image(systemName: "\(item.symbol).fill")
                         .font(Font.custom("SF Pro", size: 34))
                 }
                 .padding(.horizontal, 10)

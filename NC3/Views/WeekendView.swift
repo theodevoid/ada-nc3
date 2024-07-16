@@ -79,7 +79,7 @@ struct WeekendView: View {
                     .font(.system(size: 15))
                     Spacer()
                     HStack {
-                        Image(systemName: item.symbol)
+                        Image(systemName: "\(item.symbol).fill")
                             .font(Font.custom("SF Pro", size: 20))
                         Spacer()
                         Text(String(item.forecast.temperature) + "°")
