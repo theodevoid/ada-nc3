@@ -11,7 +11,6 @@ struct CalenderView: View {
     
     @State private var selectedDate: String = ""
     @State private var selectedDay: String = ""
-    @State var selectedTime: String = "Morning"
 
     @ObservedObject var calendarViewModel = CalendarViewModel()
 
@@ -28,7 +27,7 @@ struct CalenderView: View {
                 SelectedDateDetail(selectedDay: $selectedDay, selectedDate: $selectedDate)
                 
                 
-                CalendarActList(selectedTime: $selectedTime)
+                CalendarActList(recommendedLocation: calendarViewModel.recommendedLocation, loadingStatus: calendarViewModel.status)
 
                 
                 

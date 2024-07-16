@@ -38,6 +38,6 @@ struct DatePicker: View {
     }
 }
 
-#Preview {
-    DatePicker(customDate: CustomDate(date: "15", day: "Monday", time: "a"), selectedDate: .constant("12"), selectedDay: .constant("MON"))
-}
+//#Preview {
+//    DatePicker(customDate: CustomDate(fullDate:, date: "15", day: "Monday", time: "a"), selectedDate: .constant("12"), selectedDay: .constant("MON"))
+//}

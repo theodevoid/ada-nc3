@@ -10,7 +10,11 @@ import SwiftUI
 
 struct CalendarActList: View {
     
-    @Binding var selectedTime: String
+    var recommendedLocation: [RecommendedLocation]
+    var loadingStatus: CalendarViewModelStatus
+    @State private var selectedTime: RecommendedLocationTime = .morning
+
+    
     
     var body: some View {
         VStack{
@@ -32,8 +36,14 @@ struct CalendarActList: View {
             
             ScrollView{
                 VStack{
-                    ForEach(1..<5, id: \.self) { index in
-                        CalendarRecCard()
+                    if loadingStatus == .loading{
+                        ActivityIndicator(isAnimating: .constant(true), style: .large)
+                    }else{
+                        ForEach(recommendedLocation){recLocation in
+                            if recLocation.time == selectedTime{
+                                CalendarRecCard(recommendedLocation: recLocation)
+                            }
+                        }
                     }
                 }
             }
@@ -46,6 +56,16 @@ struct CalendarActList: View {
     }
 }
 
-#Preview {
-    CalendarActList(selectedTime: .constant("Morning"))
+struct ActivityIndicator: UIViewRepresentable {
+
+    @Binding var isAnimating: Bool
+    let style: UIActivityIndicatorView.Style
+
+    func makeUIView(context: UIViewRepresentableContext<ActivityIndicator>) -> UIActivityIndicatorView {
+        return UIActivityIndicatorView(style: style)
+    }
+
+    func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<ActivityIndicator>) {
+        isAnimating ? uiView.startAnimating() : uiView.stopAnimating()
+    }
 }

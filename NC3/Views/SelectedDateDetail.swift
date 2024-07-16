@@ -16,7 +16,7 @@ struct SelectedDateDetail: View {
         Text("\(selectedDay), \(selectedDate)")
             .font(.headline)
             .fontWeight(.semibold)
-            .foregroundColor(Color(red: 0.808, green: 0.55, blue: 0.32))
+            .foregroundColor(.secondary)
             .padding(.horizontal)
     }
 }

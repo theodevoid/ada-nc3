@@ -19,6 +19,7 @@ struct CalendarPicker: View {
                 ForEach(calendarViewModel.nextSevenDays) { customDate in
                     DatePicker(customDate: customDate, selectedDate: $selectedDate, selectedDay: $selectedDay)
                         .onTapGesture {
+                            calendarViewModel.getRecommendationCalendar(date: customDate.fullDate)
                             selectedDate = customDate.date
                             selectedDay = customDate.day
                         }
@@ -37,6 +38,7 @@ struct CalendarPicker: View {
         ))
         .onAppear {
             if let firstDate = calendarViewModel.nextSevenDays.first {
+                calendarViewModel.getRecommendationCalendar(date: firstDate.fullDate)
                 selectedDate = firstDate.date
                 selectedDay = firstDate.day
             }

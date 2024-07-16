@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CalendarRecCard: View {
+    
+    var recommendedLocation: RecommendedLocation
     var body: some View {
         ZStack{
             
@@ -23,7 +25,7 @@ struct CalendarRecCard: View {
                     .foregroundColor(.clear)
                     .frame(width: 353, height: 144)
                     .background(
-                        Image("TebetEcoPark")
+                        Image(recommendedLocation.location.locationName)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 353, height: 144)
@@ -32,15 +34,15 @@ struct CalendarRecCard: View {
                 
                 HStack {
                     VStack(alignment: .leading, spacing: 0){
-                        Text("Tebet Eco Park,")
+                        Text("\(recommendedLocation.location.locationName),")
                             .font(.title3)
                             .fontWeight(.bold)
                             .foregroundColor(.primary)
-                        Text("Jakarta")
+                        Text(recommendedLocation.location.city)
                             .font(.title3)
                             .fontWeight(.medium)
                             .foregroundColor(.primary)
-                        Text("Sunny | 10:00 AM")
+                        Text("\(recommendedLocation.forecast.temperature.rounded())° | \(recommendedLocation.time)")
                             .foregroundColor(.secondary)
                             .font(.body)
                         
@@ -50,7 +52,7 @@ struct CalendarRecCard: View {
                     Spacer()
 
                     
-                    Image(systemName: "sun.max.fill")
+                    Image(systemName: "\(recommendedLocation.symbol).fill")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .foregroundColor(.text)
@@ -67,6 +69,3 @@ struct CalendarRecCard: View {
     }
 }
 
-#Preview {
-    CalendarRecCard()
-}

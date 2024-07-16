@@ -30,11 +30,12 @@ class DateService {
         
         for i in 0..<8 {
             if let nextDate = calendar.date(byAdding: .day, value: i, to: today) {
+                let fullDate = nextDate
                 let dateString = dateFormatter.string(from: nextDate)
                 let dayString = dayFormatter.string(from: nextDate)
                 let timeString = timeFormatter.string(from: nextDate)
                 
-                let customDate = CustomDate(date: dateString, day: dayString, time: timeString)
+                let customDate = CustomDate(fulldate: fullDate, date: dateString, day: dayString, time: timeString)
                 dates.append(customDate)
             }
         }

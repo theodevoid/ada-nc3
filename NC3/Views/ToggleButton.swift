@@ -9,12 +9,12 @@ import SwiftUI
 
 struct ToggleButton: View {
     
-    @Binding var selectedTime: String
+    @Binding var selectedTime: RecommendedLocationTime
     
     var body: some View {
         Picker(selection: $selectedTime, label: Text("Time")) {
-            Text("Morning").tag("Morning")
-            Text("Noon").tag("Noon")
+            Text("morning").tag(RecommendedLocationTime.morning)
+            Text("evening").tag(RecommendedLocationTime.afternoon)
         }
     }
 }
