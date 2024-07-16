@@ -11,71 +11,58 @@ struct CalendarRecCard: View {
     var body: some View {
         ZStack{
             
-            RoundedRectangle(cornerRadius: 25.0)
-                .foregroundColor(.clear)
-                .frame(width: 353, height: 144)
-                .background(
-                    Image("TebetEcoPark")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 353, height: 144)
-                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                )
+            
             
             RoundedRectangle(cornerRadius: 25.0)
-                .foregroundColor(.clear)
-                .frame(width: 353, height: 144)
-                .background(
-                    LinearGradient(
-                        stops: [
-                            Gradient.Stop(color: .black.opacity(0.8), location: 0.10),
-                            Gradient.Stop(color: .black.opacity(0), location: 0.50),
-                            Gradient.Stop(color: .black.opacity(0.8), location: 0.91),
-                        ],
-                        startPoint: UnitPoint(x: 0.5, y: 0),
-                        endPoint: UnitPoint(x: 0.5, y: 1)
-                    )
-                    .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                )
+                .foregroundColor(.accent)
+                .frame(width: 353, height: 254)
+                .shadow(radius: 4)
             
             VStack(alignment: .leading){
-                VStack(alignment: .leading, spacing: 0){
-                    Text("Tebet Eco Park,")
-                        .font(.headline)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color.white)
-                    Text("Jakarta")
-                        .font(.headline)
-                        .fontWeight(.medium)
-                        .foregroundColor(Color.white)
-                }
-                Spacer()
-                HStack(spacing: 0){
+                RoundedRectangle(cornerRadius: 25.0)
+                    .foregroundColor(.clear)
+                    .frame(width: 353, height: 144)
+                    .background(
+                        Image("TebetEcoPark")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 353, height: 144)
+                            .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                    )
+                
+                HStack {
+                    VStack(alignment: .leading, spacing: 0){
+                        Text("Tebet Eco Park,")
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .foregroundColor(.primary)
+                        Text("Jakarta")
+                            .font(.title3)
+                            .fontWeight(.medium)
+                            .foregroundColor(.primary)
+                        Text("Sunny | 10:00 AM")
+                            .foregroundColor(.secondary)
+                            .font(.body)
+                        
+                        
+                    }
+                    .padding()
+                    Spacer()
+
+                    
                     Image(systemName: "sun.max.fill")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .foregroundColor(Color.white)
+                        .foregroundColor(.text)
                         .frame(width: 49, height: 41)
-                    
-                    Spacer()
-                    
-                    VStack(alignment: .trailing){
-                        Text("10:00 AM")
-                            .font(.footnote)
-                            .foregroundColor(Color.white)
-                        Text("Sunny | 29°")
-                            .font(.footnote)
-                            .foregroundColor(Color.white)
-                    }
-                    
-                    
+                        .padding()
                 }
-                .padding(.top)
+                Spacer()
             }
             .padding()
             
         }
-        .frame(width: 353, height: 144)
+        .frame(width: 353, height: 254)
         .padding()
     }
 }

@@ -9,34 +9,42 @@ import SwiftUI
 
 
 struct CalendarPicker: View {
-    
-    var customDate: CustomDate
+    @ObservedObject var calendarViewModel: CalendarViewModel
     @Binding var selectedDate: String
     @Binding var selectedDay: String
     
-    
     var body: some View {
-        ZStack {
-            VStack(spacing: 4){
-                Text(customDate.day.prefix(1))
-                    .font(.footnote)
-                    .fontWeight(.semibold)
-                    .foregroundColor(customDate.day == "Sunday" || customDate.day == "Saturday" ? Color.red : Color.text)
-                ZStack {
-                    Circle()
-                        .foregroundColor(selectedDate == customDate.date ? Color.accentColor : Color.clear)
-                        .scaledToFit()
-                    Text(customDate.date.prefix(2))
-                        .fontWeight(.semibold)
-                        .foregroundColor(.text)
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 20) {
+                ForEach(calendarViewModel.nextSevenDays) { customDate in
+                    DatePicker(customDate: customDate, selectedDate: $selectedDate, selectedDay: $selectedDay)
+                        .onTapGesture {
+                            selectedDate = customDate.date
+                            selectedDay = customDate.day
+                        }
                 }
             }
-            .frame(width: 40)
-            
+            .padding()
+        }
+        .background(LinearGradient(
+            stops: [
+                Gradient.Stop(color: Color(red: 0.81, green: 0.56, blue: 0.32).opacity(0.5), location: 0.00),
+                Gradient.Stop(color: Color(red: 0.81, green: 0.56, blue: 0.32).opacity(0), location: 0.47),
+                Gradient.Stop(color: Color(red: 0.81, green: 0.56, blue: 0.32).opacity(0.5), location: 1.00),
+            ],
+            startPoint: UnitPoint(x: 0, y: 0.5),
+            endPoint: UnitPoint(x: 1, y: 0.5)
+        ))
+        .onAppear {
+            if let firstDate = calendarViewModel.nextSevenDays.first {
+                selectedDate = firstDate.date
+                selectedDay = firstDate.day
+            }
         }
     }
 }
 
+
 #Preview {
-    CalendarPicker(customDate: CustomDate(date: "12", day: "MON", time: "a"), selectedDate: .constant("12"), selectedDay: .constant("MON"))
+    CalendarPicker(calendarViewModel: CalendarViewModel(), selectedDate: .constant("15 Jul 2024"), selectedDay: .constant("Monday"))
 }
