@@ -14,6 +14,7 @@ struct DetailScreenView: View {
 ///    let currentLocation = Recommendation().locations[1]
 ///    let date = "2024/07/20 06:00"
 ///
+///    let event = EventManager()
     
     @Query var recommendedLocations: [RecommendedLocation]
     @Environment(\.modelContext) var modelContext
@@ -45,7 +46,6 @@ struct DetailScreenView: View {
                 locationsData = locations
             }
         }
-
     }
     
     func contains(_ recommendedLocation: RecommendedLocation) -> Bool {
@@ -55,6 +55,7 @@ struct DetailScreenView: View {
         }
     }
     return false
+
     }
 }
 
@@ -116,7 +117,6 @@ struct DetailView: View {
         modelContext.delete(recommendedLocation)
     }
 }
-    
 //
 //#Preview {
 //    DetailScreenView()
