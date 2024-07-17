@@ -38,6 +38,6 @@ struct Recommendation {
     ]
     
     public func getLocations() -> [Location] {
-        return locations
+        return locations;
     }
 }

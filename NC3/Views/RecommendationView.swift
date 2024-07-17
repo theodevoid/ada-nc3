@@ -68,7 +68,7 @@ struct RecommendationView: View {
             
             VStack {
                 ZStack {
-                    Image(item.location.image)
+                    Image(item.location.locationName)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                     
