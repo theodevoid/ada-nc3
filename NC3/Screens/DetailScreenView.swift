@@ -49,78 +49,92 @@ struct DetailScreenView: View {
     
     var body: some View {
         VStack{
-            Image("TebetEcoPark")
-                .resizable()
-                .scaledToFit()
+            VStack {
+                Image(recommendedLocation.location.locationName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 393, height: 228)
+            }.padding(.top, 20)
             
-            HStack (alignment: .top) {
-                VStack(alignment: .leading) {
-                    Text("\(recommendedLocation.location.locationName), \(recommendedLocation.location.city)")
-                        .bold()
-                        .font(.title2)
-                        .lineLimit(1)
-                    Text("\(DateFormatter.localizedString(from: recommendedLocation.date, dateStyle: .medium, timeStyle: .none)) | \(hourString(time: recommendedLocation.time))")
-                }
-                
-                Spacer()
-                
-                Button(action: {
-                    print("Bookmark")
-                    if (contains(recommendedLocation)) {
-                        remove(recommendedLocation)
-                    } else {
-                        add(recommendedLocation)
+            VStack (alignment: .leading) {
+                HStack (alignment: .center) {
+                    VStack (alignment: .leading){
+                        Text(recommendedLocation.location.locationName)
+                            .bold()
+                            .font(.title2)
+                            .lineLimit(1)
+                        
+                        Text(recommendedLocation.location.city)
+                            .font(.title2)
+                            .lineLimit(1)
                     }
-                }, label: {
-                    if (contains(recommendedLocation)) {
-                        Image(systemName: "bookmark.fill")
-                    } else {
-                        Image(systemName: "bookmark")
-                    }
-                    
-                })
-                .foregroundStyle(.primary)
-            }
-            .padding()
-            
-            Text("Discover the perfect blend of nature and play at Tebet Eco Park! Enjoy scenic trails, vibrant playgrounds, and relaxing picnic spots. Explore interactive environmental exhibits for an educational and fun family outing.")
-            
-            Spacer()
-            
-            // PAKE GRID / WRAPPING
-            
-            HStack (alignment: .bottom) {
-                Spacer()
-                VStack {
-                    Image(systemName: "cloud.rain")
-                        .frame(height: 25)
-                    Text(determineChanceOfRainCategory(chanceOfRain: recommendedLocation.forecast.chanceOfRain))
-                        .bold()
-                    Text("Chance of Rain")
-                        .font(.subheadline)
+                    Spacer()
+                    Button(action: {
+                        print("Bookmark")
+                        if (contains(recommendedLocation)) {
+                            removeData(recommendedLocation: recommendedLocation)
+                        } else {
+                            addData(recommendedLocation: recommendedLocation)
+                        }
+                    }, label: {
+                        if (contains(recommendedLocation)) {
+                            Image(systemName: "bookmark.fill")
+                        } else {
+                            Image(systemName: "bookmark")
+                        }
+                        
+                    })
+                    .foregroundStyle(.primary)
+                }.padding(.bottom, 5)
+                HStack {
+                    Text("\(recommendedLocation.date.formatted(.dateTime.weekday(.abbreviated).month(.abbreviated).day().year(.twoDigits))) | \(hourString(time: recommendedLocation.time))")
+                        .font(.system(size: 17))
+                        .foregroundStyle(.gray)
+                    Spacer()
                 }
-                Spacer()
-                VStack {
-                    Image(systemName: "sun.max")
-                        .frame(height: 25)
-                    Text(determineUVIndexCategory(uvIndex: recommendedLocation.forecast.uvIndex))
-                        .bold()
-                    Text("UV Index")
-                        .font(.subheadline)
-                }
-                Spacer()
-                VStack {
-                    Image(systemName: recommendedLocation.symbol)
-                        .frame(height: 25)
-                    Text("\(Int(recommendedLocation.forecast.temperature))°")
-                        .bold()
-                    Text("Temperature")
-                        .font(.subheadline)
-                }
-                Spacer()
             }.padding()
             
-            Spacer()
+            HStack {
+                Text(recommendedLocation.location.desc!)
+            }.frame(width: 323, height: 50).padding()
+            
+            VStack {
+                VStack {
+                    HStack {
+                        HStack {
+                            Text(determineChanceOfRainCategory(chanceOfRain: recommendedLocation.forecast.chanceOfRain))
+                            Spacer()
+                            Text("\(Int(recommendedLocation.forecast.chanceOfRain))%")
+                        }.frame(width: 168)
+                        Spacer()
+                    }.padding(.bottom, 1)
+                    HStack {
+                        HStack {
+                            GradientLineCOR(recommendedLocation: recommendedLocation)
+                            Text("Chance of Rain")
+                        }
+                        Spacer()
+                    }
+                }
+                VStack {
+                    HStack {
+                        HStack {
+                            Text(determineUVIndexCategory(uvIndex: recommendedLocation.forecast.uvIndex))
+                            Spacer()
+                            Text("\(recommendedLocation.forecast.uvIndex)")
+                        }.frame(width: 168)
+                        Spacer()
+                    }.padding(.bottom, 1)
+                    HStack {
+                        HStack {
+                            GradientLineUVI(recommendedLocation: recommendedLocation)
+                            Text("UV Index")
+                        }
+                        Spacer()
+                    }
+                }
+            }.padding()
+            
             
             VStack {
                 Button(action: {
@@ -139,23 +153,32 @@ struct DetailScreenView: View {
                             .cornerRadius(10)
                     } else {
                         Text("Add to Calendar")
+                            .bold()
                             .frame(width: 294)
                             .padding()
-                            .background(Color.gray)
-                            .foregroundColor(.white)
+                            .background(Color.gold)
+                            .foregroundColor(.black)
                             .cornerRadius(10)
                     }
                 }.padding(.bottom, 10)
                 
                 Button(action: {
+                    let map = recommendedLocation.location.map
+                    if let url = URL(string: map){
+                        UIApplication.shared.open(url)
+                    }
                 }) {
+                    
                     Text("Open in Maps")
+                        .foregroundStyle(.blue)
                 }
+                
+                
                 
             }.padding(.bottom, 20)
             
         }.navigationTitle(recommendedLocation.location.locationName)
-                    .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.inline)
     }
     
     
@@ -172,26 +195,67 @@ struct DetailScreenView: View {
         
     }
     
-    func add(_ recommendedLocation: RecommendedLocation) {
+    func addData(recommendedLocation: RecommendedLocation) {
         modelContext.insert(recommendedLocation)
+        print(recommendedLocations)
     }
     
     // remove dr array
-    func remove(_ recommendedLocation: RecommendedLocation) {
-        do {
-            print("remove", recommendedLocation.location.locationName)
-            modelContext.delete(recommendedLocation)
-            
-            try modelContext.save()
-            
-            print("after delete")
-            for recommendedLocation in recommendedLocations {
-                print(recommendedLocation.location.locationName)
-            }
-        } catch {
-            print("eak")
+    func removeData(recommendedLocation: RecommendedLocation) {
+        modelContext.delete(recommendedLocation)
+        print(recommendedLocations)
+    }
+}
+
+struct GradientLineCOR: View {
+    
+    var recommendedLocation : RecommendedLocation
+    
+    var body: some View {
+        ZStack {
+            Rectangle()
+                .fill(LinearGradient(
+                    gradient: Gradient(colors: [Color.teal, Color.blue]),
+                    startPoint: .leading,
+                    endPoint: .trailing))
+                .frame(width: 169, height: 9)
+                .cornerRadius(10)
+            Circle()
+                .fill(Color.white)
+                .frame(width: 7, height: 9)
+                .offset(x: CGFloat(calculateOffSet(recommendedLocation: recommendedLocation)))
         }
-        
     }
     
+    func calculateOffSet(recommendedLocation: RecommendedLocation) -> Int {
+        var offSet = recommendedLocation.forecast.chanceOfRain - 80
+        return Int(offSet)
+    }
+}
+
+struct GradientLineUVI: View {
+    
+    var recommendedLocation : RecommendedLocation
+    
+    var body: some View {
+        ZStack {
+            Rectangle()
+                .fill(LinearGradient(
+                    gradient: Gradient(colors: [Color.green, Color.yellow, Color.orange, Color.red, Color.pink]),
+                    startPoint: .leading,
+                    endPoint: .trailing))
+                .frame(width: 169, height: 9)
+                .cornerRadius(10)
+            Circle()
+                .fill(Color.white)
+                .frame(width: 7, height: 9)
+                .offset(x: CGFloat(calculateOffSet(recommendedLocation)))
+        }
+    }
+    
+    func calculateOffSet(_ recommendedLocation: RecommendedLocation) -> Int {
+        var offSet = Int(recommendedLocation.forecast.uvIndex / 11 * 100) - 80
+        return offSet
+
+    }
 }

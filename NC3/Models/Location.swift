@@ -13,7 +13,7 @@ struct Location: Identifiable, Codable {
     var locationName: String
     var latitude: Double
     var longitude: Double
-    var description: String?
+    var desc: String?
     var map: String
     
     init(city: String, locationName: String, latitude: Double, longitude: Double, description: String? = nil, map: String) {
@@ -21,7 +21,7 @@ struct Location: Identifiable, Codable {
         self.locationName = locationName
         self.latitude = latitude
         self.longitude = longitude
-        self.description = description
+        self.desc = description
         self.map = map
     }
 }
