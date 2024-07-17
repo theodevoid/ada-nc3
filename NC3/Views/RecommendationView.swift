@@ -65,7 +65,7 @@ struct RecommendationView: View {
             ZStack {
                 Rectangle()
                     .frame(height: 362)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color(UIColor.tertiarySystemBackground))
                     .cornerRadius(10)
                 
                 VStack {
@@ -90,25 +90,28 @@ struct RecommendationView: View {
                     Spacer()
                     HStack {
                         VStack (alignment: .leading) {
-                            (
-                                Text(item.location.locationName + ", ")
-                                    .font(.system(size: 20))
-                                    .bold() +
-                                Text(item.location.city)
-                                    .font(.system(size: 20))
-                            )
-                            .padding(.bottom, 1)
+                            Text(item.location.locationName + ", ")
+                                .font(.system(size: 20))
+                                .bold()
+                                .foregroundColor(Color(UIColor.label))
+                            Text(item.location.city)
+                                .font(.system(size: 20))
+                                .padding(.bottom, 1)
+                                .foregroundColor(Color(UIColor.label))
                             if item.time == .morning {
                                 Text(viewModel.formatDayDate(date: item.date) + " | 08:00 AM")
                                     .font(Font.custom("SF Pro", size: 17))
+                                    .foregroundColor(Color(UIColor.label))
                             } else {
                                 Text(viewModel.formatDayDate(date: item.date) + " | 04:00 PM")
                                     .font(Font.custom("SF Pro", size: 17))
+                                    .foregroundColor(Color(UIColor.label))
                             }
                         }
                         Spacer()
                         Image(systemName: "\(item.symbol).fill")
                             .font(Font.custom("SF Pro", size: 34))
+                            .foregroundColor(Color(UIColor.label))
                     }
                     .padding(.horizontal, 10)
                     Spacer()

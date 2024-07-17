@@ -18,12 +18,13 @@ struct HomeScreenView: View {
                     .bold()
                     .padding(.horizontal, 20)
                     .padding(.bottom)
+                    .foregroundColor(Color(UIColor.label))
                 ScrollView {
                     RecommendationView(items: viewModel.model, index: $viewModel.currentIndex)
                     ZStack {
                         VStack{
                             UnevenRoundedRectangle(cornerRadii: RectangleCornerRadii(topLeading: 40, topTrailing: 40))
-                                .foregroundColor(.container)
+                                .foregroundColor((Color(UIColor.systemBackground)))
                                 .frame(width: 393.00003, height: 1140)
                         }
                         VStack {
