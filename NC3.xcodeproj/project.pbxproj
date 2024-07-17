@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7633E5EE2C47BD9E0038C14C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7633E5ED2C47BD9E0038C14C /* MainView.swift */; };
+		766C7E042C47CE83008E3398 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 766C7E032C47CE83008E3398 /* Localizable.xcstrings */; };
 		76C5E1472C3FCF740092A73C /* RecommendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C5E1462C3FCF740092A73C /* RecommendationView.swift */; };
 		76C5E14D2C4146E30092A73C /* WeekendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C5E14C2C4146E30092A73C /* WeekendView.swift */; };
 		76C5E1512C453C410092A73C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C5E1502C453C410092A73C /* HomeViewModel.swift */; };
@@ -19,7 +20,6 @@
 		B72A3AAF2C3FE3DE005C0D64 /* CalendarPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72A3AAE2C3FE3DE005C0D64 /* CalendarPicker.swift */; };
 		B72A3AB32C4117CA005C0D64 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72A3AB22C4117CA005C0D64 /* ToggleButton.swift */; };
 		B72A3AB52C4143F7005C0D64 /* CalendarRecCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72A3AB42C4143F7005C0D64 /* CalendarRecCard.swift */; };
-		B72EB4E42C4537D100B84CDD /* Phrases.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72EB4E32C4537D100B84CDD /* Phrases.swift */; };
 		B72EB4E62C453AFA00B84CDD /* DateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72EB4E52C453AFA00B84CDD /* DateService.swift */; };
 		B72EB4E82C453BDD00B84CDD /* CalendarActList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72EB4E72C453BDD00B84CDD /* CalendarActList.swift */; };
 		B72EB4EA2C453CEF00B84CDD /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72EB4E92C453CEF00B84CDD /* DatePicker.swift */; };
@@ -43,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		7633E5ED2C47BD9E0038C14C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		766C7E032C47CE83008E3398 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		76C5E1462C3FCF740092A73C /* RecommendationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationView.swift; sourceTree = "<group>"; };
 		76C5E14C2C4146E30092A73C /* WeekendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekendView.swift; sourceTree = "<group>"; };
 		76C5E1502C453C410092A73C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -54,7 +55,6 @@
 		B72A3AAE2C3FE3DE005C0D64 /* CalendarPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPicker.swift; sourceTree = "<group>"; };
 		B72A3AB22C4117CA005C0D64 /* ToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
 		B72A3AB42C4143F7005C0D64 /* CalendarRecCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarRecCard.swift; sourceTree = "<group>"; };
-		B72EB4E32C4537D100B84CDD /* Phrases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phrases.swift; sourceTree = "<group>"; };
 		B72EB4E52C453AFA00B84CDD /* DateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateService.swift; sourceTree = "<group>"; };
 		B72EB4E72C453BDD00B84CDD /* CalendarActList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarActList.swift; sourceTree = "<group>"; };
 		B72EB4E92C453CEF00B84CDD /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
@@ -125,6 +125,7 @@
 				E435C0512C3FBC6300F1D05B /* Services */,
 				E435C0502C3FBC5C00F1D05B /* Views */,
 				E435C0402C3FBAEC00F1D05B /* NC3App.swift */,
+				766C7E032C47CE83008E3398 /* Localizable.xcstrings */,
 				E435C0422C3FBAEC00F1D05B /* ContentView.swift */,
 				E435C0442C3FBAEC00F1D05B /* Item.swift */,
 				E435C0462C3FBAED00F1D05B /* Assets.xcassets */,
@@ -164,7 +165,6 @@
 				8042201F2C3FE50300A4E8B0 /* WeatherManager.swift */,
 				E4122D6B2C4111F90047AAC5 /* RecommendationService.swift */,
 				804220502C442D6B00A4E8B0 /* EventManager.swift */,
-				B72EB4E32C4537D100B84CDD /* Phrases.swift */,
 				B72EB4E52C453AFA00B84CDD /* DateService.swift */,
 			);
 			path = Services;
@@ -251,6 +251,7 @@
 			knownRegions = (
 				en,
 				Base,
+				id,
 			);
 			mainGroup = E435C0342C3FBAEC00F1D05B;
 			productRefGroup = E435C03E2C3FBAEC00F1D05B /* Products */;
@@ -269,6 +270,7 @@
 			files = (
 				E435C04A2C3FBAED00F1D05B /* Preview Assets.xcassets in Resources */,
 				E435C0472C3FBAED00F1D05B /* Assets.xcassets in Resources */,
+				766C7E042C47CE83008E3398 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +290,6 @@
 				E4122D6E2C4113A70047AAC5 /* RecommendedLocation.swift in Sources */,
 				B7BF86122C44416E001E0EBF /* SelectedDateDetail.swift in Sources */,
 				B72A3AA92C3FC2EB005C0D64 /* CalenderView.swift in Sources */,
-				B72EB4E42C4537D100B84CDD /* Phrases.swift in Sources */,
 				E435C0582C3FBCA000F1D05B /* DetailScreenView.swift in Sources */,
 				B72EB4EA2C453CEF00B84CDD /* DatePicker.swift in Sources */,
 				E435C0452C3FBAEC00F1D05B /* Item.swift in Sources */,

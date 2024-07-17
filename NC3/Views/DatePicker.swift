@@ -25,7 +25,7 @@ struct DatePicker: View {
                     .foregroundColor(customDate.day == "Sunday" || customDate.day == "Saturday" ? Color.red : Color.text)
                 ZStack {
                     Circle()
-                        .foregroundColor(selectedDate == customDate.date ? Color.accentColor : Color.clear)
+                        .foregroundColor(selectedDate == customDate.date ? Color(UIColor.tertiarySystemBackground) : Color.clear)
                         .scaledToFit()
                     Text(customDate.date.prefix(2))
                         .fontWeight(.semibold)

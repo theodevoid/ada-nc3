@@ -21,7 +21,8 @@ struct MainView: View {
             CalenderView()
                 .tabItem {
                     Label("Calendar", systemImage: "calendar")
-                }        }
+                }
+        }
         .tint(Color.orange)
     }
 }

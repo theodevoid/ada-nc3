@@ -19,7 +19,7 @@ struct CalendarActList: View {
     var body: some View {
         VStack{
             HStack{
-                Text(Phrases.activitiesTitle)
+                Text("Activities for You")
                     .font(.headline)
                     .fontWeight(.heavy)
                 
