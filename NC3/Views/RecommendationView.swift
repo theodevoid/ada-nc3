@@ -96,8 +96,13 @@ struct RecommendationView: View {
                             .font(.system(size: 20))
                         )
                         .padding(.bottom, 1)
-                        Text(viewModel.formatDayDate(date: item.date))
-                          .font(Font.custom("SF Pro", size: 17))
+                        if item.time.rawValue == "Morning" {
+                            Text(viewModel.formatDayDate(date: item.date) + " | 08:00 AM")
+                                .font(Font.custom("SF Pro", size: 17))
+                        } else {
+                            Text(viewModel.formatDayDate(date: item.date) + " | 04:00 PM")
+                                .font(Font.custom("SF Pro", size: 17))
+                        }
                     }
                     Spacer()
                     Image(systemName: "\(item.symbol).fill")

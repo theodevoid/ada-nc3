@@ -31,7 +31,7 @@ class HomeViewModel: ObservableObject {
 
     func formatDayDate(date: Date) -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "EEEE, dd MMMM | h:mm a"
+        formatter.dateFormat = "EEEE, dd MMMM"
         return formatter.string(from: date)
     }
     
