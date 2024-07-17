@@ -28,7 +28,7 @@ struct NC3App: App {
         WindowGroup {
 //            ContentView()
 //            DetailScreenView()// -> to test add to calendar
-            CalenderView()
+            MainView()
         }
         .modelContainer(for: RecommendedLocation.self)
 //        .modelContainer(sharedModelContainer)

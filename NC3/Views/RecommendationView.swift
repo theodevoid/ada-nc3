@@ -60,56 +60,59 @@ struct RecommendationView: View {
     
     @ViewBuilder
     func itemView(_ item: RecommendedLocation) -> some View {
-        ZStack {
-            Rectangle()
-                .frame(height: 362)
-                .foregroundColor(.white)
-                .cornerRadius(10)
+        NavigationLink(destination: DetailScreenView(recommendedLocation: item)) {
             
-            VStack {
-                ZStack {
-                    Image(item.location.locationName)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                    
-                    LinearGradient(
-                        stops: [
-                            Gradient.Stop(color: .black.opacity(0.8), location: 0.00),
-                            Gradient.Stop(color: .black.opacity(0), location: 0.55),
-                            Gradient.Stop(color: .black.opacity(0.8), location: 1.00),
-                        ],
-                        startPoint: UnitPoint(x: 0.5, y: 0),
-                        endPoint: UnitPoint(x: 0.5, y: 1)
-                    )
-                }
+            ZStack {
+                Rectangle()
+                    .frame(height: 362)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
                 
-                .frame(width: 341, height: 251)
-                .cornerRadius(10)
-                Spacer()
-                HStack {
-                    VStack (alignment: .leading) {
-                        (
-                            Text(item.location.locationName + ", ")
-                            .font(.system(size: 20))
-                            .bold() +
-                            Text(item.location.city)
-                            .font(.system(size: 20))
+                VStack {
+                    ZStack {
+                        Image(item.location.locationName)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                        
+                        LinearGradient(
+                            stops: [
+                                Gradient.Stop(color: .black.opacity(0.8), location: 0.00),
+                                Gradient.Stop(color: .black.opacity(0), location: 0.55),
+                                Gradient.Stop(color: .black.opacity(0.8), location: 1.00),
+                            ],
+                            startPoint: UnitPoint(x: 0.5, y: 0),
+                            endPoint: UnitPoint(x: 0.5, y: 1)
                         )
-                        .padding(.bottom, 1)
-                        if item.time.rawValue == "Morning" {
-                            Text(viewModel.formatDayDate(date: item.date) + " | 08:00 AM")
-                                .font(Font.custom("SF Pro", size: 17))
-                        } else {
-                            Text(viewModel.formatDayDate(date: item.date) + " | 04:00 PM")
-                                .font(Font.custom("SF Pro", size: 17))
-                        }
                     }
+                    
+                    .frame(width: 341, height: 251)
+                    .cornerRadius(10)
                     Spacer()
-                    Image(systemName: "\(item.symbol).fill")
-                        .font(Font.custom("SF Pro", size: 34))
+                    HStack {
+                        VStack (alignment: .leading) {
+                            (
+                                Text(item.location.locationName + ", ")
+                                    .font(.system(size: 20))
+                                    .bold() +
+                                Text(item.location.city)
+                                    .font(.system(size: 20))
+                            )
+                            .padding(.bottom, 1)
+                            if item.time == .morning {
+                                Text(viewModel.formatDayDate(date: item.date) + " | 08:00 AM")
+                                    .font(Font.custom("SF Pro", size: 17))
+                            } else {
+                                Text(viewModel.formatDayDate(date: item.date) + " | 04:00 PM")
+                                    .font(Font.custom("SF Pro", size: 17))
+                            }
+                        }
+                        Spacer()
+                        Image(systemName: "\(item.symbol).fill")
+                            .font(Font.custom("SF Pro", size: 34))
+                    }
+                    .padding(.horizontal, 10)
+                    Spacer()
                 }
-                .padding(.horizontal, 10)
-                Spacer()
             }
         }
     }

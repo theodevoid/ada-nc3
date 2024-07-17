@@ -15,24 +15,26 @@ struct CalenderView: View {
     @ObservedObject var calendarViewModel = CalendarViewModel()
     
     var body: some View {
-        VStack {
-            HStack{
-                Text("Schedule")
-                    .font(.system(size: 28))
-                    .bold()
-                    .padding(.horizontal, 20)
-                Spacer()
+        NavigationStack {
+            VStack {
+                HStack{
+                    Text("Schedule")
+                        .font(.system(size: 28))
+                        .bold()
+                        .padding(.horizontal, 20)
+                    Spacer()
+                }
+                Divider().opacity(0.0)
+                
+                CalendarPicker(calendarViewModel: calendarViewModel, selectedDate: $selectedDate, selectedDay: $selectedDay)
+                
+                SelectedDateDetail(selectedDay: $selectedDay, selectedDate: $selectedDate)
+                
+                CalendarActList(recommendedLocation: calendarViewModel.recommendedLocation, loadingStatus: calendarViewModel.status)
             }
-            Divider().opacity(0.0)
-            
-            CalendarPicker(calendarViewModel: calendarViewModel, selectedDate: $selectedDate, selectedDay: $selectedDay)
-            
-            SelectedDateDetail(selectedDay: $selectedDay, selectedDate: $selectedDate)
-            
-            CalendarActList(recommendedLocation: calendarViewModel.recommendedLocation, loadingStatus: calendarViewModel.status)
+            .background(Image("backgroundDarkLight").ignoresSafeArea())
+            .navigationBarBackButtonHidden(true)
         }
-        .background(Image("backgroundDarkLight").ignoresSafeArea())
-        .navigationBarBackButtonHidden(true)
     }
 }
 
