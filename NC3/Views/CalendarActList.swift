@@ -35,7 +35,7 @@ struct CalendarActList: View {
             }
             .padding()
             
-            ScrollView{
+//            ScrollView{
                 VStack{
                     if loadingStatus == .loading{
                         ActivityIndicator(isAnimating: .constant(true), style: .large)
@@ -47,7 +47,7 @@ struct CalendarActList: View {
                         }
                     }
                 }
-            }
+//            }
             
             Spacer()
             
