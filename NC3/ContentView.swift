@@ -13,31 +13,16 @@ struct ContentView: View {
     let recommendationService = RecommendationService()
     let cl = CLLocationManager()
     
-    @State var selectedTab = 0
-    
     var body: some View {
-        TabView(selection: $selectedTab) {
-            NavigationStack {
-                CalenderView()
-                    
-            }
-            .tabItem {
-                Label("Home", systemImage: "calendar")
-            }
-            .tag(0)
-
-            NavigationStack {
-                CalenderView()
-                    
-            }
-            .tabItem {
-                Label("Home", systemImage: "calendar")
-            }
-            .tag(1)
-            
-
+        VStack {
+            Text("Hello World")
         }
-        .tint(Color(UIColor.orange))
+        .onAppear {
+            cl.requestWhenInUseAuthorization()
+            Task {
+                try await recommendationService.getRecommendedLocationsForTheWeekend()
+            }
+        }
     }
 }
 
