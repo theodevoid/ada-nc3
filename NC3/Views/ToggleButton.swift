@@ -13,8 +13,8 @@ struct ToggleButton: View {
     
     var body: some View {
         Picker(selection: $selectedTime, label: Text("Time")) {
-            Text("Morning").tag(RecommendedLocationTime.morning)
-            Text("Afternoon").tag(RecommendedLocationTime.afternoon)
-        }
+            Text("morning").tag(RecommendedLocationTime.morning)
+            Text("afternoon").tag(RecommendedLocationTime.afternoon)
+        }.background(Color(UIColor.tertiarySystemFill))
     }
 }

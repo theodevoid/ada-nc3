@@ -22,6 +22,7 @@ struct CalendarActList: View {
                 Text(Phrases.activitiesTitle)
                     .font(.headline)
                     .fontWeight(.heavy)
+                    .foregroundColor(Color(UIColor.label))
                 
                 Spacer()
                 VStack {
@@ -52,7 +53,7 @@ struct CalendarActList: View {
             
         }
         .background(RoundedRectangle(cornerRadius: 25.0)
-            .fill(.accent))
+            .fill(Color(UIColor.systemBackground)))
     }
 }
 
