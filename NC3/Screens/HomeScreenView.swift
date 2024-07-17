@@ -22,10 +22,9 @@ struct HomeScreenView: View {
                     RecommendationView(items: viewModel.model, index: $viewModel.currentIndex)
                     ZStack {
                         VStack{
-                            Rectangle()
+                            UnevenRoundedRectangle(cornerRadii: RectangleCornerRadii(topLeading: 40, topTrailing: 40))
                                 .foregroundColor(.container)
                                 .frame(width: 393.00003, height: 1140)
-                                .cornerRadius(40)
                         }
                         VStack {
                             HStack() {
