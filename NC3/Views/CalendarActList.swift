@@ -41,8 +41,6 @@ struct CalendarActList: View {
                     }else{
                         ForEach(recommendedLocation){ recLocation in
                             if recLocation.time == selectedTime {
-//                                CalendarRecCard(recommendedLocation: recLocation)
-                                    // on tap go to other view
                                 
                                 NavigationLink(destination: DetailScreenView(recommendedLocation: recLocation)) {
                                     CalendarRecCard(recommendedLocation: recLocation)
