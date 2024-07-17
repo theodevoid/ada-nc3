@@ -47,7 +47,7 @@ struct WeekendView: View {
         ZStack {
             Rectangle()
                 .frame(height: 214)
-                .foregroundColor(.container)
+                .foregroundColor(.white)
                 .cornerRadius(10)
                 .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4)
             
