@@ -41,9 +41,9 @@ struct CalendarRecCard: View {
                         Text(recommendedLocation.location.city)
                             .font(.title3)
                             .fontWeight(.medium)                            .foregroundColor(Color(UIColor.label))
-                        Text("\(recommendedLocation.forecast.temperature.rounded())° | \(recommendedLocation.time)")
-                            .foregroundColor(.secondary)
-                            .foregroundColor(Color(UIColor.secondaryLabel))
+//                        Text("\(recommendedLocation.forecast.temperature.rounded())° | \(recommendedLocation.time)")
+//                            .foregroundColor(.secondary)
+//                            .foregroundColor(Color(UIColor.secondaryLabel))
 
                         
                     }

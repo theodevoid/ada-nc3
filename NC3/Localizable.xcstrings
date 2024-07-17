@@ -1,0 +1,586 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@ | %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ | %2$@"
+          }
+        }
+      }
+    },
+    "%@," : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%@,"
+          }
+        }
+      }
+    },
+    "%@, %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@, %2$@"
+          }
+        }
+      }
+    },
+    "%lld" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%lld"
+          }
+        }
+      }
+    },
+    "%lld%%" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%lld%%"
+          }
+        }
+      }
+    },
+    "A bamboo-themed park in Tangerang." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Taman bertema bambu di Tangerang."
+          }
+        }
+      }
+    },
+    "A botanical garden in Bogor, known for its vast plant collections." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Kebun raya di Bogor, dikenal karena koleksi tanamannya yang luas."
+          }
+        }
+      }
+    },
+    "A bustling market in Jakarta's Chinatown, known for its food and cultural items." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Pasar ramai di Pecinan Jakarta, dikenal karena makanan dan barang budaya."
+          }
+        }
+      }
+    },
+    "A coastal area in Bekasi, popular for beach activities." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Daerah pantai di Bekasi, populer untuk aktivitas pantai."
+          }
+        }
+      }
+    },
+    "A cultural center in Jakarta, featuring theaters, galleries, and a planetarium." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Pusat kebudayaan di Jakarta, dengan teater, galeri, dan planetarium."
+          }
+        }
+      }
+    },
+    "A cultural park showcasing the diversity of Indonesian culture." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Taman budaya yang menampilkan keragaman budaya Indonesia."
+          }
+        }
+      }
+    },
+    "A flower garden in Depok, known for its colorful displays." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Taman bunga di Depok, dikenal karena tampilan warnanya yang beragam."
+          }
+        }
+      }
+    },
+    "A lake in Depok, popular for fishing and boating." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Danau di Depok, populer untuk memancing dan berperahu."
+          }
+        }
+      }
+    },
+    "A large fruit garden and recreational park in Bogor." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Taman buah besar dan taman rekreasi di Bogor."
+          }
+        }
+      }
+    },
+    "A large recreational park with beaches, amusement parks, and sea world." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Taman rekreasi besar dengan pantai, taman hiburan, dan dunia laut."
+          }
+        }
+      }
+    },
+    "A large sports complex in Jakarta, home to the main stadium." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Kompleks olahraga besar di Jakarta, rumah bagi stadion utama."
+          }
+        }
+      }
+    },
+    "A large zoo in Jakarta, home to various animal species." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Kebun binatang besar di Jakarta, rumah bagi berbagai spesies hewan."
+          }
+        }
+      }
+    },
+    "A local park offering green space and recreational facilities." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Taman lokal yang menawarkan ruang hijau dan fasilitas rekreasi."
+          }
+        }
+      }
+    },
+    "A modern park in Tangerang, featuring various outdoor activities." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Taman modern di Tangerang, dengan berbagai aktivitas luar ruang."
+          }
+        }
+      }
+    },
+    "A modern waterfront area with dining, entertainment, and leisure activities." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Daerah tepi laut modern dengan tempat makan, hiburan, dan aktivitas rekreasi."
+          }
+        }
+      }
+    },
+    "A monument commemorating the heroes of the Pancasila movement." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Monumen untuk mengenang para pahlawan gerakan Pancasila."
+          }
+        }
+      }
+    },
+    "A picturesque blue lake in Tangerang." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Danau biru yang indah di Tangerang."
+          }
+        }
+      }
+    },
+    "A residential and commercial area in Bekasi." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Daerah perumahan dan komersial di Bekasi."
+          }
+        }
+      }
+    },
+    "A scenic tea plantation in the Puncak area of Bogor." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Perkebunan teh indah di daerah Puncak Bogor."
+          }
+        }
+      }
+    },
+    "A small urban forest providing a green oasis in the city." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Hutan kota kecil yang menyediakan oasis hijau di kota."
+          }
+        }
+      }
+    },
+    "Activities" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktivitas"
+          }
+        }
+      }
+    },
+    "Activities for You" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktivitas buat Anda"
+          }
+        }
+      }
+    },
+    "Add to Calendar" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tambahkan ke Kalender"
+          }
+        }
+      }
+    },
+    "Afternoon" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sore"
+          }
+        }
+      }
+    },
+    "An eco-friendly park focusing on sustainability and recreation." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Taman ramah lingkungan yang berfokus pada keberlanjutan dan rekreasi."
+          }
+        }
+      }
+    },
+    "An ecotourism area focused on mangrove conservation." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Kawasan ekowisata yang berfokus pada konservasi mangrove."
+          }
+        }
+      }
+    },
+    "An urban forest in Depok, offering green space and nature trails." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Hutan kota di Depok, menawarkan ruang hijau dan jalur alam."
+          }
+        }
+      }
+    },
+    "An urban forest park offering greenery and recreational activities." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Taman hutan kota yang menawarkan kehijauan dan aktivitas rekreasi."
+          }
+        }
+      }
+    },
+    "Bekasi" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Bekasi"
+          }
+        }
+      }
+    },
+    "Bogor" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Bogor"
+          }
+        }
+      }
+    },
+    "Calendar" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kalender"
+          }
+        }
+      }
+    },
+    "Central Jakarta" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Jakarta Pusat"
+          }
+        }
+      }
+    },
+    "Chance of Rain" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peluang Hujan"
+          }
+        }
+      }
+    },
+    "Depok" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Depok"
+          }
+        }
+      }
+    },
+    "Disabled" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak Aktif"
+          }
+        }
+      }
+    },
+    "East Jakarta" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Jakarta Timur"
+          }
+        }
+      }
+    },
+    "Hello, World!" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Halo, Dunia!"
+          }
+        }
+      }
+    },
+    "Morning" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pagi"
+          }
+        }
+      }
+    },
+    "North Jakarta" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Jakarta Utara"
+          }
+        }
+      }
+    },
+    "Open in Maps" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buka di Maps"
+          }
+        }
+      }
+    },
+    "Pick" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pilih"
+          }
+        }
+      }
+    },
+    "Saturday Picks:" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pilihan Sabtu:"
+          }
+        }
+      }
+    },
+    "Schedule" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jadwal"
+          }
+        }
+      }
+    },
+    "See More" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Muat Lebih"
+          }
+        }
+      }
+    },
+    "South Jakarta" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Jakarta Selatan"
+          }
+        }
+      }
+    },
+    "Sunday Picks:" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pilihan Minggu:"
+          }
+        }
+      }
+    },
+    "Tangerang" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Tangerang"
+          }
+        }
+      }
+    },
+    "The National Monument of Indonesia, symbolizing the fight for independence." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Monumen Nasional Indonesia, melambangkan perjuangan kemerdekaan."
+          }
+        }
+      }
+    },
+    "The old town area of Jakarta, known for its Dutch colonial buildings." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Kawasan kota tua Jakarta, dikenal karena bangunan kolonial Belandanya."
+          }
+        }
+      }
+    },
+    "Time" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waktu"
+          }
+        }
+      }
+    },
+    "UV Index" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indeks UV"
+          }
+        }
+      }
+    },
+    "Weekend Adventures" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pertualangan Akhir Pekan"
+          }
+        }
+      }
+    },
+    "West Jakarta" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Jakarta Barat"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
