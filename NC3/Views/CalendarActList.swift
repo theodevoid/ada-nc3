@@ -35,7 +35,7 @@ struct CalendarActList: View {
             }
             .padding()
             
-//            ScrollView{
+            ScrollView{
                 VStack{
                     if loadingStatus == .loading{
                         ActivityIndicator(isAnimating: .constant(true), style: .large)
@@ -47,12 +47,12 @@ struct CalendarActList: View {
                         }
                     }
                 }
-//            }
+            }
             
             Spacer()
             
         }
-        .background(RoundedRectangle(cornerRadius: 25.0)
+        .background(UnevenRoundedRectangle(cornerRadii: .init(topLeading: 25, topTrailing: 25))
             .fill(Color(UIColor.systemBackground)))
     }
 }
