@@ -34,8 +34,7 @@ struct Recommendation {
         Location(city: "Tangerang", locationName: "Taman Bambu", latitude: -6.193685852748541, longitude: 106.63423834434427, description: "A bamboo-themed park in Tangerang.", map: "https://maps.app.goo.gl/WfEYF7LdF7LZqt7y9"),
         Location(city: "Tangerang", locationName: "Telaga Biru Cisoka", latitude: -6.277275513485609, longitude: 106.43274260573247, description: "A picturesque blue lake in Tangerang.", map: "https://maps.app.goo.gl/NrThv8146NzLVbxV8"),
         Location(city: "Bekasi", locationName: "Pantai Mekar", latitude: -6.023428962533171, longitude: 107.0058319688315, description: "A coastal area in Bekasi, popular for beach activities.", map: "https://maps.app.goo.gl/qw5Sbg4iL5sQwhsU6"),
-        Location(city: "Bekasi", locationName: "Bukit Deltamas", latitude: -6.347711770376964, longitude: 107.18986351164001, description: "A residential and commercial area in Bekasi.", map: "https://maps.app.goo.gl/dSudhpPK1NJFBqsx9"),
-        Location(city: "Bekasi", locationName: "Taman Kemang Pratama", latitude: -6.269351556931544, longitude: 106.98828383570094, description: "A recreational park in Bekasi, offering various outdoor activities.", map: "https://maps.app.goo.gl/jy89zJJootytAK199")
+        Location(city: "Bekasi", locationName: "Bukit Deltamas", latitude: -6.347711770376964, longitude: 107.18986351164001, description: "A residential and commercial area in Bekasi.", map: "https://maps.app.goo.gl/dSudhpPK1NJFBqsx9")
     ]
     
     public func getLocations() -> [Location] {

@@ -42,7 +42,7 @@ struct CalendarRecCard: View {
                             .font(.title3)
                             .fontWeight(.medium)
                             .foregroundColor(.primary)
-                        Text("\(recommendedLocation.forecast.temperature.rounded())° | \(recommendedLocation.time)")
+                        Text("\(recommendedLocation.forecast.temperature.rounded())° | \(recommendedLocation.time.rawValue)")
                             .foregroundColor(.secondary)
                             .font(.body)
                         

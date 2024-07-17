@@ -19,12 +19,12 @@ class SimplifiedForecast {
     }
 }
 
-enum RecommendedLocationTime {
-    case morning
-    case afternoon
+enum RecommendedLocationTime: String {
+    case morning = "Morning"
+    case afternoon = "Afternoon"
 }
 
-class RecommendedLocation: Identifiable{
+class RecommendedLocation: Identifiable {
     var location: Location
     var forecast: SimplifiedForecast
     var time: RecommendedLocationTime
