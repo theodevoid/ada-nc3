@@ -48,7 +48,7 @@ struct WeekendView: View {
             ZStack {
                 Rectangle()
                     .frame(height: 214)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color(UIColor.tertiarySystemBackground))
                     .cornerRadius(10)
                     .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4)
                 
@@ -72,22 +72,25 @@ struct WeekendView: View {
                     .cornerRadius(10)
                     Spacer()
                     VStack (alignment: .leading) {
-                        (
-                            Text(item.location.locationName + ", ")
-                                .fontWeight(.semibold) +
-                            Text(item.location.city)
-                        )
-                        .font(.system(size: 15))
+                        Text(item.location.locationName + ", ")
+                            .font(.system(size: 15))
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color(UIColor.label))
+                        Text(item.location.city)
+                            .font(.system(size: 15))
+                            .foregroundColor(Color(UIColor.label))
                         Spacer()
                         HStack {
                             Image(systemName: "\(item.symbol).fill")
                                 .font(Font.custom("SF Pro", size: 20))
+                                .foregroundColor(Color(UIColor.label))
                             Spacer()
                             Text(String(item.forecast.temperature) + "°")
                                 .font(
                                     Font.custom("SF Pro", size: 17)
                                         .weight(.semibold)
                                 )
+                                .foregroundColor(Color(UIColor.label))
                         }
                     }
                     .padding(10)
