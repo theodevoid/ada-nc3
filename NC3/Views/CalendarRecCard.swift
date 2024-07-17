@@ -16,7 +16,7 @@ struct CalendarRecCard: View {
             
             
             RoundedRectangle(cornerRadius: 25.0)
-                .foregroundColor(.accent)
+                .foregroundColor(Color(UIColor.tertiarySystemBackground))
                 .frame(width: 353, height: 254)
                 .shadow(radius: 4)
             
@@ -37,15 +37,14 @@ struct CalendarRecCard: View {
                         Text("\(recommendedLocation.location.locationName),")
                             .font(.title3)
                             .fontWeight(.bold)
-                            .foregroundColor(.primary)
+                            .foregroundColor(Color(UIColor.label))
                         Text(recommendedLocation.location.city)
                             .font(.title3)
-                            .fontWeight(.medium)
-                            .foregroundColor(.primary)
-                        Text("\(recommendedLocation.forecast.temperature.rounded())° | \(recommendedLocation.time.rawValue)")
+                            .fontWeight(.medium)                            .foregroundColor(Color(UIColor.label))
+                        Text("\(recommendedLocation.forecast.temperature.rounded())° | \(recommendedLocation.time)")
                             .foregroundColor(.secondary)
-                            .font(.body)
-                        
+                            .foregroundColor(Color(UIColor.secondaryLabel))
+
                         
                     }
                     .padding()
@@ -55,7 +54,7 @@ struct CalendarRecCard: View {
                     Image(systemName: "\(recommendedLocation.symbol).fill")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .foregroundColor(.text)
+                        .foregroundColor(Color(UIColor.label))
                         .frame(width: 49, height: 41)
                         .padding()
                 }

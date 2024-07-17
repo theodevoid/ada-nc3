@@ -16,7 +16,7 @@ struct SelectedDateDetail: View {
         Text("\(selectedDay), \(selectedDate)")
             .font(.headline)
             .fontWeight(.semibold)
-            .foregroundColor(.secondary)
+            .foregroundColor(Color(UIColor.secondaryLabel))
             .padding(.horizontal)
     }
 }

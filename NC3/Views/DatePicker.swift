@@ -22,14 +22,15 @@ struct DatePicker: View {
                      ? "Today" : customDate.day.prefix(1))
                     .font(.footnote)
                     .fontWeight(.semibold)
-                    .foregroundColor(customDate.day == "Sunday" || customDate.day == "Saturday" ? Color.red : Color.text)
+                    .foregroundColor(Color(UIColor.label))
+
                 ZStack {
                     Circle()
-                        .foregroundColor(selectedDate == customDate.date ? Color.accentColor : Color.clear)
+                        .foregroundColor(selectedDate == customDate.date ? Color(UIColor.tertiarySystemBackground) : Color.clear)
                         .scaledToFit()
                     Text(customDate.date.prefix(2))
                         .fontWeight(.semibold)
-                        .foregroundColor(.text)
+                        .foregroundColor(Color(UIColor.label))
                 }
             }
             .frame(width: 40)
@@ -37,7 +38,3 @@ struct DatePicker: View {
         }
     }
 }
-
-//#Preview {
-//    DatePicker(customDate: CustomDate(fullDate:, date: "15", day: "Monday", time: "a"), selectedDate: .constant("12"), selectedDay: .constant("MON"))
-//}

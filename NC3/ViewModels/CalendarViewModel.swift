@@ -17,7 +17,7 @@ enum CalendarViewModelStatus{
 class CalendarViewModel: ObservableObject {
     @Published var nextSevenDays: [CustomDate] = []
     @Published var recommendedLocation: [RecommendedLocation] = []
-    @Published var status: CalendarViewModelStatus = .loading
+    @Published var status: CalendarViewModelStatus = .result
     
     private let dateService: DateService
     private let recommendationService = RecommendationService()
