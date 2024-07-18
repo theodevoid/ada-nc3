@@ -14,56 +14,55 @@ struct BookmarkScreenView: View {
     @Environment(\.modelContext) private var modelContext
     
     var body: some View {
-        VStack {
-            HStack {
-                Text("Bookmarks")
-                    .font(.title)
-                    .bold()
-                Spacer()
-            }.padding()
-            
-            Spacer()
-            
-            ZStack {
-                Rectangle()
-                    .frame(width: 393, height: 675)
-                    .cornerRadius(25)
-                    .foregroundColor(Color(UIColor.systemBackground))
+        NavigationView {
+            VStack {
+                HStack {
+                    Text("Bookmarks")
+                        .font(.title)
+                        .bold()
+                    Spacer()
+                }.padding()
                 
-                VStack {
-                    HStack {
-                        Text("Your Bookmarks")
-                            .bold()
-                        Spacer()
-                    }.padding().padding(.top, 20)
+                Spacer()
+                
+                ZStack {
+                    Rectangle()
+                        .frame(width: 393, height: 675)
+                        .cornerRadius(25)
+                        .foregroundColor(Color(UIColor.systemBackground))
                     
-                    ScrollView{
-                        NavigationView {
-                            List {
-                                ForEach(recommendedLocations) { recLoc in
-                                    NavigationLink(destination: DetailScreenView(recommendedLocation: recLoc)) {
-                                        VStack(alignment: .leading) {
-                                            Text(recLoc.location.locationName)
-                                                .font(.headline)
-                                            Text("\(recLoc.date.formatted(.dateTime.weekday(.abbreviated).month(.abbreviated).day().year(.twoDigits))) | \(hourString(time: recLoc.time))")
-                                                .font(.subheadline)
-                                                .foregroundColor(.gray)
-                                        }
-                                    }
+                    VStack {
+                        HStack {
+                            Text("Your Bookmarks")
+                                .bold()
+                            Spacer()
+                        }.padding().padding(.top, 20)
+                        
+                        
+                        List (recommendedLocations) { recLoc in
+                            NavigationLink(destination: DetailScreenView(recommendedLocation: recLoc)) {
+                                VStack(alignment: .leading) {
+                                    Text(recLoc.location.locationName)
+                                        .font(.headline)
+                                    Text("\(recLoc.date.formatted(.dateTime.weekday(.abbreviated).month(.abbreviated).day().year(.twoDigits))) | \(hourString(time: recLoc.time))")
+                                        .font(.subheadline)
+                                        .foregroundColor(.gray)
                                 }
                             }
-                        }
+                        }.listStyle(.plain)
                     }
                     
-                    Spacer()
+                    //                    Spacer()
+                    
                 }
-            }
+            }.background(
+                Image("backgroundDarkLight")
+                    .resizable()
+                    .ignoresSafeArea()
+                )
             
-        }.background(
-            Image("backgroundDarkLight")
-                .resizable()
-                .ignoresSafeArea()
-        )
+        }
+        
     }
     
     private func hourString(time: RecommendedLocationTime) -> String {
