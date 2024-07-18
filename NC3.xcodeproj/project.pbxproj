@@ -15,6 +15,7 @@
 		804220202C3FE50300A4E8B0 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8042201F2C3FE50300A4E8B0 /* WeatherManager.swift */; };
 		804220512C442D6B00A4E8B0 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804220502C442D6B00A4E8B0 /* EventManager.swift */; };
 		8068FFE22C44FCBA005EF5B3 /* BookmarkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8068FFE12C44FCBA005EF5B3 /* BookmarkService.swift */; };
+		80D562EE2C4821F700A192EA /* BookmarkScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D562ED2C4821F700A192EA /* BookmarkScreenView.swift */; };
 		B72A3AA92C3FC2EB005C0D64 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72A3AA82C3FC2EB005C0D64 /* CalenderView.swift */; };
 		B72A3AAB2C3FD183005C0D64 /* CustomDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72A3AAA2C3FD183005C0D64 /* CustomDate.swift */; };
 		B72A3AAD2C3FD25F005C0D64 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72A3AAC2C3FD25F005C0D64 /* CalendarViewModel.swift */; };
@@ -50,6 +51,7 @@
 		8042201F2C3FE50300A4E8B0 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		804220502C442D6B00A4E8B0 /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		8068FFE12C44FCBA005EF5B3 /* BookmarkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkService.swift; sourceTree = "<group>"; };
+		80D562ED2C4821F700A192EA /* BookmarkScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkScreenView.swift; sourceTree = "<group>"; };
 		B72A3AA82C3FC2EB005C0D64 /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
 		B72A3AAA2C3FD183005C0D64 /* CustomDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDate.swift; sourceTree = "<group>"; };
 		B72A3AAC2C3FD25F005C0D64 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
@@ -63,7 +65,7 @@
 		E4122D6B2C4111F90047AAC5 /* RecommendationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationService.swift; sourceTree = "<group>"; };
 		E4122D6D2C4113A70047AAC5 /* RecommendedLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedLocation.swift; sourceTree = "<group>"; };
 		E4122D702C4117820047AAC5 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		E435C03D2C3FBAEC00F1D05B /* NC3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NC3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E435C03D2C3FBAEC00F1D05B /* DAY OUT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DAY OUT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E435C0402C3FBAEC00F1D05B /* NC3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NC3App.swift; sourceTree = "<group>"; };
 		E435C0442C3FBAEC00F1D05B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		E435C0462C3FBAED00F1D05B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,7 +110,7 @@
 		E435C03E2C3FBAEC00F1D05B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E435C03D2C3FBAEC00F1D05B /* NC3.app */,
+				E435C03D2C3FBAEC00F1D05B /* DAY OUT.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,6 +179,7 @@
 				E435C0572C3FBCA000F1D05B /* DetailScreenView.swift */,
 				B72A3AA82C3FC2EB005C0D64 /* CalenderView.swift */,
 				7633E5ED2C47BD9E0038C14C /* MainView.swift */,
+				80D562ED2C4821F700A192EA /* BookmarkScreenView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -226,7 +229,7 @@
 			);
 			name = NC3;
 			productName = NC3;
-			productReference = E435C03D2C3FBAEC00F1D05B /* NC3.app */;
+			productReference = E435C03D2C3FBAEC00F1D05B /* DAY OUT.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -295,6 +298,7 @@
 				7633E5EE2C47BD9E0038C14C /* MainView.swift in Sources */,
 				76C5E1472C3FCF740092A73C /* RecommendationView.swift in Sources */,
 				8068FFE22C44FCBA005EF5B3 /* BookmarkService.swift in Sources */,
+				80D562EE2C4821F700A192EA /* BookmarkScreenView.swift in Sources */,
 				E435C0612C3FC76A00F1D05B /* Location.swift in Sources */,
 				E435C0412C3FBAEC00F1D05B /* NC3App.swift in Sources */,
 				804220202C3FE50300A4E8B0 /* WeatherManager.swift in Sources */,
@@ -461,8 +465,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.voidfnc.NC3;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "ADA.NC3-B5";
+				PRODUCT_NAME = "DAY OUT";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -498,8 +502,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.voidfnc.NC3;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "ADA.NC3-B5";
+				PRODUCT_NAME = "DAY OUT";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;

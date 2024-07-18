@@ -189,7 +189,6 @@ struct DetailScreenView: View {
     
     func contains(_ recommendedLocation: RecommendedLocation) -> Bool {
         for recLoc in recommendedLocations {
-            return recLoc.id == recommendedLocation.id
             if ((recLoc.location.locationName == recommendedLocation.location.locationName) && (recLoc.time == recommendedLocation.time)) {
                 print("ada")
                 return true

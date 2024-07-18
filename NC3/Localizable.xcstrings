@@ -72,6 +72,7 @@
       }
     },
     "A bustling market in Jakarta's Chinatown, known for its food and cultural items." : {
+      "extractionState" : "stale",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -112,6 +113,7 @@
       }
     },
     "A flower garden in Depok, known for its colorful displays." : {
+      "extractionState" : "stale",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -152,6 +154,7 @@
       }
     },
     "A large sports complex in Jakarta, home to the main stadium." : {
+      "extractionState" : "stale",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -202,6 +205,7 @@
       }
     },
     "A monument commemorating the heroes of the Pancasila movement." : {
+      "extractionState" : "stale",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -212,6 +216,7 @@
       }
     },
     "A picturesque blue lake in Tangerang." : {
+      "extractionState" : "stale",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -232,6 +237,7 @@
       }
     },
     "A scenic tea plantation in the Puncak area of Bogor." : {
+      "extractionState" : "stale",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -292,6 +298,7 @@
       }
     },
     "An eco-friendly park focusing on sustainability and recreation." : {
+      "extractionState" : "stale",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -302,6 +309,7 @@
       }
     },
     "An ecotourism area focused on mangrove conservation." : {
+      "extractionState" : "stale",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -350,6 +358,12 @@
           }
         }
       }
+    },
+    "Bookmark" : {
+
+    },
+    "Bookmarks" : {
+
     },
     "Calendar" : {
       "localizations" : {
@@ -580,6 +594,9 @@
           }
         }
       }
+    },
+    "Your Bookmarks" : {
+
     }
   },
   "version" : "1.0"

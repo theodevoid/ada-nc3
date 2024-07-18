@@ -21,7 +21,12 @@ struct MainView: View {
             CalenderView()
                 .tabItem {
                     Label("Calendar", systemImage: "calendar")
-                }        }
+                } 
+            BookmarkScreenView()
+                .tabItem {
+                    Label("Bookmark", systemImage: "bookmark")
+                }
+        }
         .tint(Color.orange)
     }
 }
