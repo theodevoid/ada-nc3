@@ -13,7 +13,7 @@ struct NC3App: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
-//            RecommendedLocation.self
+            RecommendedLocation.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -30,7 +30,7 @@ struct NC3App: App {
 //            DetailScreenView()// -> to test add to calendar
             MainView()
         }
-        .modelContainer(for: RecommendedLocation.self)
+        .modelContainer(sharedModelContainer)
 //        .modelContainer(sharedModelContainer)
     }
 }
